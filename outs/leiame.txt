@@ -1,0 +1,1 @@
+Diretório para os arquivos de resultado dos experimentos.

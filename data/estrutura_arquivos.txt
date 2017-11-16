@@ -1,0 +1,32 @@
+término dos arquivos: -1 na primeira coluna (id-registro)
+
+data. txt
+
+1	id_registro	(linha do arquivo)	
+2	id_experimento	(dia)
+3	id_serviço
+4	coord_utm_x
+5	coord_utm_y
+6	id_equipe
+7	tipo_serviço
+8	hora_despacho	(minutos a partir das 08:00 do dia)
+9	tempo_execução	(minutos gastos para execução do serviço)
+10	prazo_execução  (em minutos, a partir da 0:00hs do primeiro dia do arquivo)
+11	odom_ini	(odômetro das equipes no início do deslocamento para o serviço)
+12	odom_fin	(odômetro ao término de execução do serviço)
+--------------------------
+
+costs.txt
+
+coluna	
+1	id_registro	(linha do arquivo)	
+2	id_experimento	(dia)
+3	id_serviço A
+4	id_serviço B
+5	lat do ponto A
+6	lng do ponto A
+7	lat do ponto B
+8	lng do ponto B
+9	distancia	(em kms, calculada a partir das vias reais)
+10	custo_temporal	(em segundos, calculado a partir das vias reais)
+--------------------------
