@@ -142,9 +142,10 @@ public class RealData implements ControlExperiment {
 
     // carregas as ids dos dias no vetor
     //TODO Abrir e salvar arquivo
-    public void load_ids_work_days(IntList list_id_work_days, int n_work_days) throws IOException {
+    //public void load_ids_work_days(IntList list_id_work_days, int n_work_days) throws IOException {
+    public IntList load_ids_work_days(int n_work_days) throws IOException {
         //delete list_id_work_days;
-        list_id_work_days = new IntList(n_work_days);
+        IntList list_id_work_days = new IntList(n_work_days);
 
         boolean first_register = true;
         int counter_days = 0;
@@ -177,6 +178,8 @@ public class RealData implements ControlExperiment {
                 flag = false;
             }
         }
+
+        return list_id_work_days;
     }
 
     // retorna a qtde de serviços de um dia

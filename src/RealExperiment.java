@@ -44,7 +44,7 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
         this.time_ini_experiment = (int) System.currentTimeMillis();  // instante do início do experimento
         RealData real_data = new RealData();
         int n_work_days = real_data.count_work_days();  // contando número de dias de trabalho na base de dados
-        real_data.load_ids_work_days(this.list_id_work_days, n_work_days);  // criado a lista com as ids dos dias de trabalho
+        real_data.load_ids_work_days(n_work_days);  // criado a lista com as ids dos dias de trabalho
         //delete real_data;
 
         for (int current_day = 0; current_day < n_work_days; current_day++) {
