@@ -46,8 +46,8 @@ public class Utilities {
                     if (double_vector[i] == d_last_inserted) {
                         if (!sorted_list.on_the_list(i)) { // o ínidice i ainda não foi inserido
                             i_next_insert = i;
-                            d_next_insert = double_vector[i];
-                            i = n_items;
+                            d_next_insert = double_vector[i];                            
+                            break;
                         }
                     }
 

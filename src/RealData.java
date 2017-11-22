@@ -59,12 +59,12 @@ public class RealData implements ControlExperiment {
         String line;
         Vector<Integer> output = new Vector<Integer>();
 
-        while ((line = this.data_file.readLine()) != null) {
+        	line = this.data_file.readLine();
             line = trim(line);
-
             Vector<String> _line = split(line, "\\s+");
 
             this.id_register = Integer.parseInt(_line.elementAt(0));
+            if(this.id_register != -1){
             this.id_work_day = Integer.parseInt(_line.elementAt(1));
             this.id_point    = Integer.parseInt(_line.elementAt(2));
             this.utm_x       = Integer.parseInt(_line.elementAt(3));
@@ -82,6 +82,7 @@ public class RealData implements ControlExperiment {
                 this.km_end = Integer.parseInt(_line.elementAt(11));
             }
 
+        
         }
 
     }
@@ -121,8 +122,8 @@ public class RealData implements ControlExperiment {
         while (flag) {  // lendo todo o arquivo das matrizes
 
             this.read_next_register();
-
-            if (id_register != -1) {
+           
+            if (this.id_register != -1) {
                 if (first_register) {
                     first_register = false;
                     current_day = this.id_work_day;

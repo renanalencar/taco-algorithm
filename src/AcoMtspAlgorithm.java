@@ -432,7 +432,7 @@ public class AcoMtspAlgorithm implements ControlExperiment, ControlSTACS {
     public void make_sorted_lists() {
         for (int i = 0; i < this.n; i++){  // nó de partida
             sorted_lists[i].empty();
-        double[] col_cost_matrix = this.cost_matrix.get_col_matrix(i);
+            double[] col_cost_matrix = this.cost_matrix.get_col_matrix(i);
 
             Utilities.sort_double(col_cost_matrix, this.sorted_lists[i]);
 

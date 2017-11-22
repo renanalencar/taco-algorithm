@@ -37,14 +37,14 @@ public class RealMatrix {
         String line;
         Vector<Integer> output = new Vector<Integer>();
 
-        while ((line = this.matrix_file.readLine()) != null) {
+        	line = this.matrix_file.readLine();
             line = trim(line);
 
-            Vector<String> _line = split(line, " ");
+            Vector<String> _line = split(line, "\\s+");
             int lineSize = _line.size();
-
-            if(lineSize == 10) {
-                this.id_register = Integer.parseInt(_line.elementAt(0));
+            this.id_register = Integer.parseInt(_line.elementAt(0));
+            if(lineSize == 10 && this.id_register !=-1) {
+                
                 this.id_work_day = Integer.parseInt(_line.elementAt(1));
                 this.id_point_a = Integer.parseInt(_line.elementAt(2));
                 this.id_point_b = Integer.parseInt(_line.elementAt(3));
@@ -55,7 +55,7 @@ public class RealMatrix {
                 this.real_distance = Double.parseDouble(_line.elementAt(8));
                 this.real_time_cost = Integer.parseInt(_line.elementAt(9));
             }
-        }
+        
 
     }
 
