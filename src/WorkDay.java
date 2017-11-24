@@ -140,7 +140,7 @@ public class WorkDay implements ControlExperiment {
         // já aplica DESPATCH_REAL_SOL: atualiza em day_services o tempo de execução do serviço de acordo como a solução real calculada (time_dispatch - partial_route_cost)
         //delete real_solution;
         this.real_solution = new MtspSolution(this.n_points, this.n_teams);
-        this.real_data.load_real_solution(this.id_work_day, this.real_solution, this.current_instance, this.day_services);
+        this.real_solution = this.real_data.load_real_solution(this.id_work_day, this.n_points, this.n_teams, this.current_instance, this.day_services);
 
         // salvando a solução real para plotagem (apenas na primeira simulação do dia de trabalho)
         if (counter_day_simulations == 1){

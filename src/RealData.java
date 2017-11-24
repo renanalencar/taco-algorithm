@@ -270,6 +270,7 @@ public class RealData implements ControlExperiment {
 
             if (this.id_register != -1){
                 if (this.id_work_day == selected_id_work_day){
+                    day_services[depot] = new ServiceOrder();
                     if (this.id_point != depot){  // o índice do depósito não é inicializado
                         day_services[this.id_point] = new ServiceOrder();
                         day_services[this.id_point].new_service(this.utm_x, utm_y, this.type_service, this.time_dispatch, this.time_execution, this.deadline_execution, this.km_ini, this.km_end);
@@ -369,8 +370,12 @@ public class RealData implements ControlExperiment {
 
     // é definido um novo tempo de despacho para os serviços quando calculados os custos das rotas reais utilizando os dados considerados.
     //TODO Abrir e salvar arquivo
-    public void load_real_solution(int selected_id_work_day, MtspSolution real_solution, MtspInstance instance, ServiceOrder day_services[]) throws IOException {
+//  public void load_real_solution(int selected_id_work_day, MtspSolution real_solution, MtspInstance instance, ServiceOrder day_services[]) throws IOException {
+    public MtspSolution load_real_solution(int selected_id_work_day, int n_points, int n_teams, MtspInstance instance, ServiceOrder day_services[]) throws IOException {
         DoubleMatrix cost_matrix = instance.get_cost_matrix();
+
+        MtspSolution real_solution = new MtspSolution(n_points, n_teams);
+
         real_solution.reset(); // a solução real é do tipo de finais fechados
 
         this.data_file.close();
@@ -421,6 +426,8 @@ public class RealData implements ControlExperiment {
             }
         }
         real_solution.recalculate_solution(cost_matrix);  // recalculando os custos (redundante)
+
+        return real_solution;
 
     }
 
