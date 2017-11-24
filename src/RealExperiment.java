@@ -18,8 +18,11 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
     private BufferedWriter f_log_exper; // salvamento em arquivo
     private BufferedWriter f_simul_res; // arquivo com o resumo das simulações
     private BufferedWriter f_time_execs;
-
+    private LogExperiment logExperiment;
     public RealExperiment() throws IOException {
+    	
+    	 this.logExperiment = LogExperiment.getInstance();
+         this.logExperiment.writeF_REAL_SOLS("\r\nDia de trabalho: ");
         // criando apenas estruturas, com tamanhos mínimos
         this.list_id_work_days = new IntList(1);
         this.current_work_day  = new WorkDay(-1);
@@ -38,6 +41,7 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
         this.f_time_execs = new BufferedWriter(new FileWriter("outs/time_execs.txt"));
         //TODO Configuração precisão do float
         //f_time_execs << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+        System.out.println("oi"); 
     }
 
     public void run_real_experiment() throws IOException {
@@ -94,7 +98,8 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
                 current_day = n_work_days;
             }
         }
-
+        LogExperiment log = LogExperiment.getInstance();
+        log.closeFiles();
         double time_experiment = System.currentTimeMillis() - time_ini_experiment;
         this.f_log_exper.write("\r\n------------------------------\r\nTempo total do experimento: " + (int)time_experiment + " milissegundos\r\n");
 
