@@ -18,6 +18,8 @@ public class Main implements ControlExperiment {
         } else { // experimento com dados reais
             RealExperiment re = new RealExperiment();
             re.run_real_experiment();
+            LogExperiment log = LogExperiment.getInstance();
+            log.flushFiles();
         }
 
     }

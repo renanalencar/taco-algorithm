@@ -235,14 +235,13 @@ public class MtspSolution implements ControlExperiment {
     public void save_to_plot(BufferedWriter file_out, Node nodes[]) throws IOException {
         //TODO Configurar precisão do float
         //file_out << setiosflags (ios::fixed) << setprecision(0);
-    	LogExperiment log = LogExperiment.getInstance();
         if (this.random_seed != -1)
             file_out.write("Semente randômica: " + this.random_seed + "\r\n");
         for (int i = 0; i < this.nodes_list.n_items(); i++) {
-            log.writeF_REAL_SOLS(nodes_list.value(i) + "\t");
-            log.writeF_REAL_SOLS(nodes[nodes_list.value(i)].x() + "\t");
-            log.writeF_REAL_SOLS(String.valueOf(nodes[nodes_list.value(i)].y()));
-            log.writeF_REAL_SOLS("\r\n");
+            file_out.write(nodes_list.value(i) + "\t");
+            file_out.write(nodes[nodes_list.value(i)].x() + "\t");
+            file_out.write(String.valueOf(nodes[nodes_list.value(i)].y()));
+            file_out.write("\r\n");
         }
         //TODO Configurar precisão do float
         //file_out << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);

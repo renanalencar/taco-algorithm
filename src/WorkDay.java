@@ -454,6 +454,7 @@ public class WorkDay implements ControlExperiment {
         	this.logExperiment.f_total_costs.write("\r\n" + this.id_work_day + "\t");
         }
         this.complete_final_solution.save_longest_cost(this.logExperiment.f_longests);
+        
         this.complete_final_solution.save_total_cost(this.logExperiment.f_total_costs);
 
         // salvando em plot_final_created_sols_day.txt a solução final para o dia de trabalho
@@ -540,6 +541,7 @@ public class WorkDay implements ControlExperiment {
         	this.logExperiment.f_longests.write("\r\n" + this.id_work_day + "\t");
         	this.logExperiment.f_total_costs.write( "\r\n" + this.id_work_day + "\t");
         }
+        System.out.println("---------------------------------------------------------------- aqui ----------------------------------------------------------");
         this.complete_final_solution.save_longest_cost(this.logExperiment.f_longests);
         this.complete_final_solution.save_total_cost(this.logExperiment.f_total_costs);
 
