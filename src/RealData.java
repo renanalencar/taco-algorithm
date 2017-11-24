@@ -199,7 +199,7 @@ public class RealData implements ControlExperiment {
             this.read_next_register();
 
             if (this.id_register != -1){
-                if (this.id_work_day == selected_id_work_day){
+                if (this.id_work_day == selected_id_work_day) {
                     if (this.id_point != this.depot){
                         counter_services++;
                     }
@@ -253,12 +253,14 @@ public class RealData implements ControlExperiment {
     }
 
     //TODO Abrir e salvar arquivo
-    public void load_service_orders(int selected_id_work_day, ServiceOrder[] day_services) throws IOException {
+    public ServiceOrder[] load_service_orders(int selected_id_work_day, int n_points) throws IOException {
         this.data_file.close();
         //data_file.open(data_file_name, ios::in);
         FileInputStream fstream = new FileInputStream(this.data_file_name);
         DataInputStream in = new DataInputStream(fstream);
         this.data_file = new BufferedReader(new InputStreamReader(in));
+
+        ServiceOrder[] day_services = new ServiceOrder[n_points];
 
         boolean flag = true;
         while (flag) {  // lendo todo o arquivo das matrizes
@@ -278,6 +280,8 @@ public class RealData implements ControlExperiment {
                 flag = false;
             }
         }
+
+        return day_services;
     }
 
     //TODO Abrir e salvar arquivo

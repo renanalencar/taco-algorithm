@@ -125,7 +125,7 @@ public class WorkDay implements ControlExperiment {
         // criando estruturas com os dados de todos os serviços do dia
         //delete [] day_services;
         this.day_services = new ServiceOrder[this.n_points]; // para que o índice de day_services corresponda ao índice das matrizes. O índice do deposito é desconsiderado.
-        this.real_data.load_service_orders(this.id_work_day, this.day_services);
+        this.day_services = this.real_data.load_service_orders(this.id_work_day, this.n_points);
 
         // preenchendo a matriz de custos que será usada na criação das soluções
         // utiliza os tempos de execução em day_services, se a matriz for de tempos de desloc + tempos de execução
