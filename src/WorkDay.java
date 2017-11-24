@@ -15,6 +15,8 @@ public class WorkDay implements ControlExperiment {
     private BufferedWriter f_real_sols;     // soluções reais dos dias para plotagem
     private BufferedWriter f_longests;
     private BufferedWriter f_total_costs;
+    
+    private LogExperiment logExperiment;
 
     private long seed_simulation;     // semente randomica da simulção
 
@@ -47,7 +49,7 @@ public class WorkDay implements ControlExperiment {
         this.id_work_day          = current_id_work_day;
         this.real_data            = new RealData();
         this.real_matrix          = new RealMatrix();
-
+        
         this.day_services         = new ServiceOrder[1];
         this.real_distance_matrix = new DoubleMatrix(1);
         this.real_time_matrix     = new DoubleMatrix(1);
@@ -58,17 +60,18 @@ public class WorkDay implements ControlExperiment {
         this.current_aco_solution    = new MtspSolution(1,1);
 
         // arquivo para gravação das soluções reais para plotagem
-        this.f_real_sols = new BufferedWriter(new FileWriter("outs/plot_real_sols.txt"));
+       // this.f_real_sols = new BufferedWriter(new FileWriter("outs/plot_real_sols.txt"));
         //TODO Configurar precisão do float
         //f_real_sols << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
 
-        this.f_longests = new BufferedWriter(new FileWriter("outs/longests.txt"));
+        //this.f_longests = new BufferedWriter(new FileWriter("outs/longests.txt"));
         //TODO Configurar precisão do float
         //f_longests << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
 
-        this.f_total_costs = new BufferedWriter(new FileWriter("outs/total_costs.txt"));
+       // this.f_total_costs = new BufferedWriter(new FileWriter("outs/total_costs.txt"));
         //TODO Configurar precisão do float
         //f_total_costs << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+        this.logExperiment = LogExperiment.getInstance();
 
         this.df = new DecimalFormat();
         this.df.setMaximumFractionDigits(FLOAT_PRECISION);
@@ -145,8 +148,9 @@ public class WorkDay implements ControlExperiment {
         // salvando a solução real para plotagem (apenas na primeira simulação do dia de trabalho)
         if (counter_day_simulations == 1){
             Node[] plan_coords = this.current_instance.get_plan_nodes_vector();
-            this.f_real_sols.write("\r\nDia de trabalho: " + this.id_work_day + "\r\n");
-            this.real_solution.save_to_plot(this.f_real_sols, plan_coords);
+            //this.f_real_sols.write("\r\nDia de trabalho: " + this.id_work_day + "\r\n");
+            this.logExperiment.writeF_REAL_SOLS("\r\nDia de trabalho: " + this.id_work_day + "\r\n");
+            this.real_solution.save_to_plot(this.logExperiment.f_real_sols, plan_coords);
         }
 
         if (PRINT_DAY_SERVICES == 1) {
@@ -445,11 +449,12 @@ public class WorkDay implements ControlExperiment {
         this.complete_final_solution.save_total_cost(f_simul_res);
 
         if (counter_day_simulations == 1){
-            this.f_longests.write("\r\n" + this.id_work_day + "\t");
-            this.f_total_costs.write("\r\n" + this.id_work_day + "\t");
+        	
+        	this.logExperiment.f_longests.write("\r\n" + this.id_work_day + "\t");
+        	this.logExperiment.f_total_costs.write("\r\n" + this.id_work_day + "\t");
         }
-        this.complete_final_solution.save_longest_cost(this.f_longests);
-        this.complete_final_solution.save_total_cost(this.f_total_costs);
+        this.complete_final_solution.save_longest_cost(this.logExperiment.f_longests);
+        this.complete_final_solution.save_total_cost(this.logExperiment.f_total_costs);
 
         // salvando em plot_final_created_sols_day.txt a solução final para o dia de trabalho
         BufferedWriter f_day_aco_final_sols;
@@ -532,11 +537,11 @@ public class WorkDay implements ControlExperiment {
         this.complete_final_solution.save_total_cost(f_simul_res);
 
         if (counter_day_simulations == 1) {
-            this.f_longests.write("\r\n" + this.id_work_day + "\t");
-            this.f_total_costs.write( "\r\n" + this.id_work_day + "\t");
+        	this.logExperiment.f_longests.write("\r\n" + this.id_work_day + "\t");
+        	this.logExperiment.f_total_costs.write( "\r\n" + this.id_work_day + "\t");
         }
-        this.complete_final_solution.save_longest_cost(this.f_longests);
-        this.complete_final_solution.save_total_cost(this.f_total_costs);
+        this.complete_final_solution.save_longest_cost(this.logExperiment.f_longests);
+        this.complete_final_solution.save_total_cost(this.logExperiment.f_total_costs);
 
         // salvando em plot_final_created_sols_day.txt a solução final para o dia de trabalho
         BufferedWriter f_day_aco_final_sols;
