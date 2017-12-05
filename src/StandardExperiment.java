@@ -1,5 +1,3 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -11,18 +9,18 @@ import java.io.IOException;
 public class StandardExperiment implements ControlExperiment, ControlSTACS {
     private int depot;
     private long seed_random;           // semente dos randomicos do experimento
-    private BufferedWriter f_log_stand_exper;
-    private BufferedWriter f_sols_aco;
+    private LogExperiment log;
 
     //TODO Verificar carregamento de arquivo
     public StandardExperiment() throws IOException {
+    	log = LogExperiment.getInstance();
         depot = DEPOT_INDEX;
-        f_log_stand_exper = new BufferedWriter(new FileWriter("outs/log_stand_experiment.txt"));
+       // this.log.f_log_stand_exper = new BufferedWriter(new FileWriter("outs/log_stand_experiment.txt"));
         //TODO configuração a precisão do float
-        //f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
-        f_sols_aco = new BufferedWriter(new FileWriter("outs/plot_best_sols_aco.txt"));
+        //this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+//        this.log.f_sols_aco = new BufferedWriter(new FileWriter("outs/plot_best_sols_aco.txt"));
         //TODO configuração a precisão do float
-        //f_sols_aco << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+        //this.log.f_sols_aco << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
     }
 
     //TODO Verificar carregamento de arquivo
@@ -83,12 +81,12 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
 
                 // salvando em best_sols_aco_to_plot.txt as melhores soluções de cada execução, de acordo com o objetivo
                 Node[] plan_nodes_vector = model_instance.get_plan_nodes_vector();
-                aco_solution.save_to_plot(f_sols_aco, plan_nodes_vector);
+                aco_solution.save_to_plot(this.log.f_sols_aco, plan_nodes_vector);
 
                 // salvando títulos dos campos da tabela:
                 if (exec_counter == 0){
-                    f_log_stand_exper.write("\r\nBest solution of each execution:");
-                    f_log_stand_exper.write("\r\nexec\tlongest\t\ttsolut\t\tcycle\t\ttime(ms)\tseed execution\r\n");
+                    this.log.f_log_stand_exper.write("\r\nBest solution of each execution:");
+                    this.log.f_log_stand_exper.write("\r\nexec\tlongest\t\ttsolut\t\tcycle\t\ttime(ms)\tseed execution\r\n");
                 }
 
                 // copiando custos da melhor solução da execução:
@@ -113,7 +111,7 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
                 if ((exec_counter == 0) || (tsolut < best_totsol_exper)){
                     best_totsol_exper = tsolut;
                 }
-                f_log_stand_exper.write((exec_counter+1) + "\t" + longest + "\t\t" + tsolut + "\t\t" + cycle + "\t\t" + time + "\t\t" + seed_r + "\r\n");
+                this.log.f_log_stand_exper.write((exec_counter+1) + "\t" + longest + "\t\t" + tsolut + "\t\t" + cycle + "\t\t" + time + "\t\t" + seed_r + "\r\n");
 
                 //delete aco_solution;
 
@@ -134,25 +132,25 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
             double sdttimes = Utilities.std_dev(time_best_sols, N_EXECUTIONS);
 
             //TODO Configuração precisão do ponto flutuante
-            //f_log_stand_exper << setprecision(2);
-            f_log_stand_exper.write("\r\nAvgs\t" + avglongests + "\t\t" + avgtsoluts + "\t\t" + avgcycles + "\t\t" + avgttimes + "\r\n");
-            f_log_stand_exper.write("SDs\t" + sdlongests + "\t\t" + sdtsoluts + "\t\t" + sdcycles + "\t\t" + sdttimes + "\r\n");
+            //this.log.f_log_stand_exper << setprecision(2);
+            this.log.f_log_stand_exper.write("\r\nAvgs\t" + avglongests + "\t\t" + avgtsoluts + "\t\t" + avgcycles + "\t\t" + avgttimes + "\r\n");
+            this.log.f_log_stand_exper.write("SDs\t" + sdlongests + "\t\t" + sdtsoluts + "\t\t" + sdcycles + "\t\t" + sdttimes + "\r\n");
             //TODO Configuração precisão do ponto flutuante
-            //f_log_stand_exper << setprecision(FLOAT_PRECISION);
+            //this.log.f_log_stand_exper << setprecision(FLOAT_PRECISION);
 
-            f_log_stand_exper.write("\r\nBest cost:\t");
+            this.log.f_log_stand_exper.write("\r\nBest cost:\t");
             if (APP_OBJECTIVE == 1) {  // minimizar a longest_route
-                f_log_stand_exper.write(String.valueOf(best_longest_exper));
+                this.log.f_log_stand_exper.write(String.valueOf(best_longest_exper));
             } else {
-                f_log_stand_exper.write(String.valueOf(best_totsol_exper));
+                this.log.f_log_stand_exper.write(String.valueOf(best_totsol_exper));
             }
-            f_log_stand_exper.write("\r\n");
+            this.log.f_log_stand_exper.write("\r\n");
 
             double time_experiment = ((System.currentTimeMillis() - time_ini_experiment));
             if(PISO == 1) {
                 System.out.print("\r\nTotal time experiment: " + (int)time_experiment + " miliseconds\r\n");
             }
-            f_log_stand_exper.write("\r\nTotal time experiment: " + (int)time_experiment + " miliseconds\r\n");
+            this.log.f_log_stand_exper.write("\r\nTotal time experiment: " + (int)time_experiment + " miliseconds\r\n");
 
             //delete [] time_best_sols;
             //delete [] cycle_best_sols;
@@ -170,129 +168,129 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
      * @throws IOException
      */
     public void save_header_exper() throws IOException {
-        f_log_stand_exper.write("\r\n-----------------------------------------------------\r\n");
+        this.log.f_log_stand_exper.write("\r\n-----------------------------------------------------\r\n");
 
-        f_log_stand_exper.write("Experiment objective:\t\t");
+        this.log.f_log_stand_exper.write("Experiment objective:\t\t");
         if (APP_OBJECTIVE == 1)
-            f_log_stand_exper.write("minimize longest route (workload balance)\r\n");
+            this.log.f_log_stand_exper.write("minimize longest route (workload balance)\r\n");
         if (APP_OBJECTIVE == 2)
-            f_log_stand_exper.write("minimize sum routes (basic MTSP)\r\n");
+            this.log.f_log_stand_exper.write("minimize sum routes (basic MTSP)\r\n");
 
-        f_log_stand_exper.write("Type solutions:\t\t\t");
+        this.log.f_log_stand_exper.write("Type solutions:\t\t\t");
         if (TYPE_MTSP_SOLS == 1)
-            f_log_stand_exper.write("basic MTSP: single depot and closed routes\r\n");
+            this.log.f_log_stand_exper.write("basic MTSP: single depot and closed routes\r\n");
         if (TYPE_MTSP_SOLS == 2)
-            f_log_stand_exper.write("MTSP with multiple starting depots and single end depot (open routes)\r\n");
+            this.log.f_log_stand_exper.write("MTSP with multiple starting depots and single end depot (open routes)\r\n");
 
-        f_log_stand_exper.write("Model instance:\t\t\t");
+        this.log.f_log_stand_exper.write("Model instance:\t\t\t");
         switch (MODEL_INSTANCE) {
             case 0:
-                f_log_stand_exper.write("Test grids\r\n");
+                this.log.f_log_stand_exper.write("Test grids\r\n");
                 break;
             case 1:
-                f_log_stand_exper.write("TSPLIB Eil51 (51 nodes)\r\n");
+                this.log.f_log_stand_exper.write("TSPLIB Eil51 (51 nodes)\r\n");
                 break;
             case 2:
-                f_log_stand_exper.write("TSPLIB Eil76 (76 nodes)\r\n");
+                this.log.f_log_stand_exper.write("TSPLIB Eil76 (76 nodes)\r\n");
                 break;
             case 3:
-                f_log_stand_exper.write("TSPLIB Eil101 (101 nodes)\r\n");
+                this.log.f_log_stand_exper.write("TSPLIB Eil101 (101 nodes)\r\n");
                 break;
             case 4:
-                f_log_stand_exper.write("TSPLIB Pr76 (76 nodes)\r\n");
+                this.log.f_log_stand_exper.write("TSPLIB Pr76 (76 nodes)\r\n");
                 break;
             case 5:
-                f_log_stand_exper.write("TSPLIB Pr1002 (1002 nodes)\r\n");
+                this.log.f_log_stand_exper.write("TSPLIB Pr1002 (1002 nodes)\r\n");
                 break;
             case 6:
-                f_log_stand_exper.write("sgb128 (128 nodes)\r\n");
+                this.log.f_log_stand_exper.write("sgb128 (128 nodes)\r\n");
                 break;
         }
 
-        f_log_stand_exper.write("Salesmen number:\t\t" + N_SALESMEN + "\r\n");
+        this.log.f_log_stand_exper.write("Salesmen number:\t\t" + N_SALESMEN + "\r\n");
 
-        f_log_stand_exper.write("Depot node:\t\t\t" + depot + "\r\n");
+        this.log.f_log_stand_exper.write("Depot node:\t\t\t" + depot + "\r\n");
 
-        f_log_stand_exper.write("Independent executions:\t\t" + N_EXECUTIONS + "\r\n");
+        this.log.f_log_stand_exper.write("Independent executions:\t\t" + N_EXECUTIONS + "\r\n");
 
-        f_log_stand_exper.write("Stopping criterion:\t\t");
+        this.log.f_log_stand_exper.write("Stopping criterion:\t\t");
         if (NO_IMP_CYCLES > 0)
-            f_log_stand_exper.write(NO_IMP_CYCLES + " cycles without improved solutions\r\n");
+            this.log.f_log_stand_exper.write(NO_IMP_CYCLES + " cycles without improved solutions\r\n");
         if (MAX_TIME_EXEC > 0)
-            f_log_stand_exper.write(MAX_TIME_EXEC + " seconds per executin\r\n");
+            this.log.f_log_stand_exper.write(MAX_TIME_EXEC + " seconds per executin\r\n");
         if (MAX_CYCLES > 0)
-            f_log_stand_exper.write(MAX_CYCLES + " cycles per execution\r\n");
+            this.log.f_log_stand_exper.write(MAX_CYCLES + " cycles per execution\r\n");
 
-        f_log_stand_exper.write("\r\nAnt Colony System parameters:\r\n");
+        this.log.f_log_stand_exper.write("\r\nAnt Colony System parameters:\r\n");
         //TODO Configurar precisão do float
-        //f_log_stand_exper << setiosflags (ios::fixed) << setprecision(2);
-        f_log_stand_exper.write("   N (iterations per cycle):\t" + N + "\r\n");
-        f_log_stand_exper.write("   q0 (determinism level):\t" + Q0 + "\r\n");
-        f_log_stand_exper.write( "   alfa (pheromone weight):\t" + ALFA + "\r\n");
-        f_log_stand_exper.write("   beta (visibility weight):\t" + BETA + "\r\n");
-        f_log_stand_exper.write("   ksi (pheromone persit LPU):\t" + KSI + "\r\n");
-        f_log_stand_exper.write("   ro (pheromone persit GPU):\t" + RO + "\r\n");
+        //this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(2);
+        this.log.f_log_stand_exper.write("   N (iterations per cycle):\t" + N + "\r\n");
+        this.log.f_log_stand_exper.write("   q0 (determinism level):\t" + Q0 + "\r\n");
+        this.log.f_log_stand_exper.write( "   alfa (pheromone weight):\t" + ALFA + "\r\n");
+        this.log.f_log_stand_exper.write("   beta (visibility weight):\t" + BETA + "\r\n");
+        this.log.f_log_stand_exper.write("   ksi (pheromone persit LPU):\t" + KSI + "\r\n");
+        this.log.f_log_stand_exper.write("   ro (pheromone persit GPU):\t" + RO + "\r\n");
         //TODO Configurar precisão do float
-        //f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+        //this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
 
-        f_log_stand_exper.write("\r\nExperiment parameters:\r\n");
+        this.log.f_log_stand_exper.write("\r\nExperiment parameters:\r\n");
 
-        f_log_stand_exper.write("   Candidate list length:\t" + CL_LENGTH + "\r\n");
+        this.log.f_log_stand_exper.write("   Candidate list length:\t" + CL_LENGTH + "\r\n");
 
-        f_log_stand_exper.write("   Local Pheromone Update:\t");
+        this.log.f_log_stand_exper.write("   Local Pheromone Update:\t");
         if (LPU == 1)
-            f_log_stand_exper.write("ON\r\n");
+            this.log.f_log_stand_exper.write("ON\r\n");
         else
-            f_log_stand_exper.write("OFF\r\n");
+            this.log.f_log_stand_exper.write("OFF\r\n");
 
-        f_log_stand_exper.write("   Global Pheromone Update:\t");
+        this.log.f_log_stand_exper.write("   Global Pheromone Update:\t");
         if (GPU == 1) {
-            f_log_stand_exper.write("ON");
+            this.log.f_log_stand_exper.write("ON");
             if (GPUBSF == 1)
-                f_log_stand_exper.write("\t--> best-so-far solution updating");
+                this.log.f_log_stand_exper.write("\t--> best-so-far solution updating");
             else
-                f_log_stand_exper.write("\t--> best solution each cycle updating");
+                this.log.f_log_stand_exper.write("\t--> best solution each cycle updating");
             if (GPUNODEP != 0)
-                f_log_stand_exper.write("\t--> not depositing or evaporanting on edges connected to depot");
-            f_log_stand_exper.write("\r\n");
+                this.log.f_log_stand_exper.write("\t--> not depositing or evaporanting on edges connected to depot");
+            this.log.f_log_stand_exper.write("\r\n");
         } else
-            f_log_stand_exper.write("OFF\r\n");
+            this.log.f_log_stand_exper.write("OFF\r\n");
 
-        f_log_stand_exper.write("   Type cost matrix: \t\t");
+        this.log.f_log_stand_exper.write("   Type cost matrix: \t\t");
         if (TYPE_EUCLID_MATRIX == 0)
-            f_log_stand_exper.write("double\r\n");
+            this.log.f_log_stand_exper.write("double\r\n");
         if (TYPE_EUCLID_MATRIX == 1)
-            f_log_stand_exper.write("integer\r\n");
+            this.log.f_log_stand_exper.write("integer\r\n");
 
-        f_log_stand_exper.write("   Start node ants:\t\t");
+        this.log.f_log_stand_exper.write("   Start node ants:\t\t");
         if (TYPE_MTSP_SOLS == 2)
-            f_log_stand_exper.write("accordding positions of instance (open routes)\r\n");
+            this.log.f_log_stand_exper.write("accordding positions of instance (open routes)\r\n");
         if (TYPE_MTSP_SOLS == 1){
             if (ANTS_INIT_NODES == 1)
-                f_log_stand_exper.write("all starting from single depot\r\n");
+                this.log.f_log_stand_exper.write("all starting from single depot\r\n");
             if (ANTS_INIT_NODES == 2)
-                f_log_stand_exper.write("random nodes in all solutions\r\n");
+                this.log.f_log_stand_exper.write("random nodes in all solutions\r\n");
             if (ANTS_INIT_NODES == 3)
-                f_log_stand_exper.write("random nodes each " + CHG_INIT_NODES + " cycles without improvement\r\n");
+                this.log.f_log_stand_exper.write("random nodes each " + CHG_INIT_NODES + " cycles without improvement\r\n");
         }
 
-        f_log_stand_exper.write("   Check best ant repetitions:\t" + CBA_REPET);
+        this.log.f_log_stand_exper.write("   Check best ant repetitions:\t" + CBA_REPET);
         if (CBA_REPET == 0){  // check better ant repetitions
-            f_log_stand_exper.write("\t--> no checking");
+            this.log.f_log_stand_exper.write("\t--> no checking");
         }
-        f_log_stand_exper.write("\r\n");
+        this.log.f_log_stand_exper.write("\r\n");
 
-        f_log_stand_exper.write("\r\nLocal Search:\r\n");
-        f_log_stand_exper.write("   2-opt (all created solutions):\t\t");
+        this.log.f_log_stand_exper.write("\r\nLocal Search:\r\n");
+        this.log.f_log_stand_exper.write("   2-opt (all created solutions):\t\t");
         if (LS2O == 1)
-            f_log_stand_exper.write("ON\r\n");
+            this.log.f_log_stand_exper.write("ON\r\n");
         else
-            f_log_stand_exper.write("OFF\r\n");
-        f_log_stand_exper.write("   3-opt (only best cycle solutions):\t\t");
+            this.log.f_log_stand_exper.write("OFF\r\n");
+        this.log.f_log_stand_exper.write("   3-opt (only best cycle solutions):\t\t");
         if (LS3O == 1)
-            f_log_stand_exper.write("ON\r\n");
+            this.log.f_log_stand_exper.write("ON\r\n");
         else
-            f_log_stand_exper.write("OFF\r\n");
+            this.log.f_log_stand_exper.write("OFF\r\n");
 
     }
 }

@@ -6,6 +6,13 @@ import java.io.IOException;
 public class LogExperiment {
 	
   static LogExperiment logExperiment;
+
+  static BufferedWriter f_log_stand_exper;
+  static BufferedWriter f_sols_aco; 
+  
+  
+  
+  
   static BufferedWriter f_real_sols;     // soluções reais dos dias para plotagem
   static BufferedWriter f_longests;
   
@@ -15,6 +22,15 @@ public class LogExperiment {
  public static BufferedWriter f_log_exper;
  
  private LogExperiment() throws IOException{
+	 
+	 
+	
+ }
+ public void loadBuffersStandardExperiment() throws IOException {
+	 this.f_sols_aco = new BufferedWriter(new FileWriter("outs/plot_best_sols_aco.txt"));
+	 this.f_log_stand_exper = new BufferedWriter(new FileWriter("outs/log_stand_experiment.txt"));
+ }
+ public void loaBuffersdRealExperiment() throws IOException{
 	 // arquivo para gravação das soluções reais para plotagem
      this.f_real_sols = new BufferedWriter(new FileWriter("outs/plot_real_sols.txt"));
      //TODO Configurar precisão do float
@@ -53,13 +69,18 @@ public class LogExperiment {
 	
  }
 
-public void flushFiles() throws IOException {
+public void flushFilesRealExperiment() throws IOException {
 	this.f_longests.flush();
 	this.f_real_sols.flush();
 	this.f_total_costs.flush();
 	this.f_log_exper.flush();
 	this.f_time_execs.flush();;
 	this.f_simul_res.flush();
+	
+}
+public void flushFilesStandardExperiment() throws IOException {
+	this.f_sols_aco.flush();
+	this.f_log_stand_exper.flush();
 	
 }
 

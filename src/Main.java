@@ -9,17 +9,21 @@ import java.io.IOException;
 public class Main implements ControlExperiment {
 
     public static void main(String[] args) throws IOException {
-
+    	
+    	LogExperiment log = LogExperiment.getInstance();
 
         if (MODE_EXECUTION == 1) { // experimento padrão
+        	log.loadBuffersStandardExperiment();
             StandardExperiment se = new StandardExperiment();
             se.run_standard_experiment();  // sem uma instância como parâmetro é carregada a instância modelo defida em control.cpp
+            log.flushFilesStandardExperiment();
 
         } else { // experimento com dados reais
+        	log.loadBuffersStandardExperiment();
             RealExperiment re = new RealExperiment();
             re.run_real_experiment();
-            LogExperiment log = LogExperiment.getInstance();
-            log.flushFiles();
+            
+            log.flushFilesRealExperiment();
         }
 
     }

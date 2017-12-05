@@ -5,7 +5,7 @@
  *
  */
 public interface ControlExperiment {
-    int MODE_EXECUTION         = 2;  // 1: experimento com instâncias modelo; 2: experimento com dados reais
+    int MODE_EXECUTION         = 1;  // 1: experimento com instâncias modelo; 2: experimento com dados reais
     int TYPE_EUCLID_MATRIX     = 0;  // tipo de dados da matriz de distâncias euclidianas: (0)double, (1)int
     int DEPOT_INDEX            = 0;  // índice da instância que corresponde ao depósito
     int FLOAT_PRECISION        = 2;  // precisão decimal de impressão de pontos flutuantes
