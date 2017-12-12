@@ -19,7 +19,7 @@ public class Main implements ControlExperiment {
             log.flushFilesStandardExperiment();
 
         } else { // experimento com dados reais
-        	log.loadBuffersStandardExperiment();
+        	log.loaBuffersdRealExperiment();
             RealExperiment re = new RealExperiment();
             re.run_real_experiment();
             

@@ -30,7 +30,7 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
     public void run_standard_experiment() throws IOException {
         // cada loop é um experimento independente
         for (int exper_counter = 0; exper_counter < 1; exper_counter++) {
-
+        	System.out.println(++log.i + " aquii");
             //double time_ini_experiment = (double)clock();  // instante do início do experimento
             long time_ini_experiment = System.currentTimeMillis();
 
@@ -168,6 +168,7 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
      * @throws IOException
      */
     public void save_header_exper() throws IOException {
+    	
         this.log.f_log_stand_exper.write("\r\n-----------------------------------------------------\r\n");
 
         this.log.f_log_stand_exper.write("Experiment objective:\t\t");

@@ -4,9 +4,9 @@ Dia de Trabalho: 1
 
 ----------
 Simulacao: 1
-Semente rândomica utilizada: 1511524620128
+Semente rândomica utilizada: 1512645085842
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -23,16 +23,16 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.339995822396276	custo total: 21.549986149963395  	solução:  0  2  1 16  7  8 14 13  0  3 12 10  9  0  6 11  0  4  5 15  0 
-Melhoramento:		maior rota: 10,09%	custo total: 2,88%
+Solução proposta:	maior rota: 7.465247103678877	custo total: 23.327386417826045  	solução:  0  3  2  1 13  0  6 16 15  8 14  7  0  4 12 10  9  0  5 11  0 
+Melhoramento:		maior rota: 8,56%	custo total: -5,13%
 
-Tempo total da simulacao: 114 milissegundos
+Tempo total da simulacao: 117 milissegundos
 
 ----------
 Simulacao: 2
-Semente rândomica utilizada: 1511524620211
+Semente rândomica utilizada: 1512645085930
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -49,16 +49,16 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.5675164352525695	custo total: 21.780346855590746  	solução:  0  3  2  1  8  7 14 13  0  6 16 15  0 12 10  9  0  4  5 11  0 
-Melhoramento:		maior rota: 7,31%	custo total: 1,84%
+Solução proposta:	maior rota: 7.425179468014603	custo total: 20.261202044245515  	solução:  0 15  8 14  7 13  0  3 12 10  9  0  6  2  1 16  0  4  5 11  0 
+Melhoramento:		maior rota: 9,05%	custo total: 8,69%
 
-Tempo total da simulacao: 56 milissegundos
+Tempo total da simulacao: 41 milissegundos
 
 ----------
 Simulacao: 3
-Semente rândomica utilizada: 1511524620262
+Semente rândomica utilizada: 1512645085965
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -75,16 +75,16 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.411275095774347	custo total: 21.36787970900464  	solução:  0  8 14  7 13  0  6 11  0  5  4 12 10  9  0  3  2  1 16 15  0 
-Melhoramento:		maior rota: 9,22%	custo total: 3,7%
+Solução proposta:	maior rota: 7.343836767170853	custo total: 21.613603652905795  	solução:  0  3 12 10  9  0  2  1 16 14  7  8 13  0  6 11  0  4  5 15  0 
+Melhoramento:		maior rota: 10,05%	custo total: 2,6%
 
-Tempo total da simulacao: 51 milissegundos
+Tempo total da simulacao: 29 milissegundos
 
 ----------
 Simulacao: 4
-Semente rândomica utilizada: 1511524620309
+Semente rândomica utilizada: 1512645085998
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -101,16 +101,16 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.365591015811177	custo total: 21.566591625944803  	solução:  0  3  2  1 16 15  0  6 12 10  9  0 14  7  8 13  0  4  5 11  0 
-Melhoramento:		maior rota: 9,78%	custo total: 2,81%
+Solução proposta:	maior rota: 7.475540982535856	custo total: 23.2455407132701  	solução:  0  3  2  1  8 14 13  0  6 16 15  7  0  5 11  0  4 12 10  9  0 
+Melhoramento:		maior rota: 8,43%	custo total: -4,76%
 
-Tempo total da simulacao: 36 milissegundos
+Tempo total da simulacao: 54 milissegundos
 
 ----------
 Simulacao: 5
-Semente rândomica utilizada: 1511524620347
+Semente rândomica utilizada: 1512645086045
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -127,42 +127,16 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.365591015811177	custo total: 21.60413935062104  	solução:  0  3 11  0  2  1 16 14  7  8 13  0  6 12 10  9  0  4  5 15  0 
-Melhoramento:		maior rota: 9,78%	custo total: 2,64%
-
-Tempo total da simulacao: 35 milissegundos
-
-----------
-Simulacao: 6
-Semente rândomica utilizada: 1511524620380
-Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
-   Criterio de parada:	10 ciclos por execucao
-   Tamanho da lista de candidatos:	20
-   N (solucoes geradas a cada ciclo):	10
-   q0 (nível de determinismo):		0.9
-   alfa (peso do feromonio):		1
-   beta (peso da visibilidade):		2
-   ksi (persitencia do feromonio nas atualizacoes locais):	0.1
-   ro (persitencia do feromonio nas atualizacoes globais):	0.1
-
-Busca Local:
-   2-opt (todas as solucoes criadas):		ON
-   3-opt (somente nas melhores soluções dos ciclos):		OFF
-
-Resumo da simulacao:
-Dia de trabalho: 1	serviços: 16	equipes: 4
-Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.567722724217683	custo total: 21.61304085158648  	solução:  0  3  2  1  8 14  7 13  0  6 16 15  0  4  5 12 10  9  0 11  0 
-Melhoramento:		maior rota: 7,3%	custo total: 2,6%
+Solução proposta:	maior rota: 7.358459725984973	custo total: 22.50379634738845  	solução:  0  3 12  9 10  0  6  4  5  7 14  8  0  1 11  0  2 16 15 13  0 
+Melhoramento:		maior rota: 9,87%	custo total: -1,42%
 
 Tempo total da simulacao: 37 milissegundos
 
 ----------
-Simulacao: 7
-Semente rândomica utilizada: 1511524620422
+Simulacao: 6
+Semente rândomica utilizada: 1512645086083
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -179,16 +153,42 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.567722724217683	custo total: 21.617631600321097  	solução:  0  3  2  1  8 14  7 13  0  6 16 15  0 11  0  5  4 12 10  9  0 
-Melhoramento:		maior rota: 7,3%	custo total: 2,58%
+Solução proposta:	maior rota: 7.339995822396276	custo total: 22.528490976204747  	solução:  0  3 12 10  9  0  6 11  0  4  5  8 14  7  0  2  1 16 15 13  0 
+Melhoramento:		maior rota: 10,09%	custo total: -1,53%
 
-Tempo total da simulacao: 31 milissegundos
+Tempo total da simulacao: 29 milissegundos
+
+----------
+Simulacao: 7
+Semente rândomica utilizada: 1512645086118
+Parametros ACO:
+   Objetivo MTSP:	minimizar maior rota (workload balance)
+   Criterio de parada:	10 ciclos por execucao
+   Tamanho da lista de candidatos:	20
+   N (solucoes geradas a cada ciclo):	10
+   q0 (nível de determinismo):		0.9
+   alfa (peso do feromonio):		1
+   beta (peso da visibilidade):		2
+   ksi (persitencia do feromonio nas atualizacoes locais):	0.1
+   ro (persitencia do feromonio nas atualizacoes globais):	0.1
+
+Busca Local:
+   2-opt (todas as solucoes criadas):		ON
+   3-opt (somente nas melhores soluções dos ciclos):		OFF
+
+Resumo da simulacao:
+Dia de trabalho: 1	serviços: 16	equipes: 4
+Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
+Solução proposta:	maior rota: 7.488558863176348	custo total: 23.355701510295063  	solução:  0  3  1 16 15  8 14  7  0  6  2 13  0  4 12 10  9  0  5 11  0 
+Melhoramento:		maior rota: 8,27%	custo total: -5,25%
+
+Tempo total da simulacao: 35 milissegundos
 
 ----------
 Simulacao: 8
-Semente rândomica utilizada: 1511524620445
+Semente rândomica utilizada: 1512645086144
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -205,16 +205,16 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 8.230941620196445	custo total: 19.86388335274893  	solução:  0  3 11 12 10  9  0  6 16  0 15  8 14  7 13  0  4  5  2  1  0 
-Melhoramento:		maior rota: -0,82%	custo total: 10,48%
+Solução proposta:	maior rota: 7.4117376035361655	custo total: 21.681504489271113  	solução:  0  3 12 10  9  0  1  2 16  7 14  8 13  0  6 11  0  4  5 15  0 
+Melhoramento:		maior rota: 9,21%	custo total: 2,29%
 
-Tempo total da simulacao: 22 milissegundos
+Tempo total da simulacao: 20 milissegundos
 
 ----------
 Simulacao: 9
-Semente rândomica utilizada: 1511524620465
+Semente rândomica utilizada: 1512645086165
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -231,16 +231,16 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.339995822396276	custo total: 21.57151660919862  	solução:  0  3 12 10  9  0  6  2  1 16 15  0  4  5 11  0 14  7  8 13  0 
-Melhoramento:		maior rota: 10,09%	custo total: 2,79%
+Solução proposta:	maior rota: 7.358459725984973	custo total: 21.632067556494498  	solução:  0  3 12  9 10  0  6 11  0  2  1 16 14  7  8 13  0  4  5 15  0 
+Melhoramento:		maior rota: 9,87%	custo total: 2,51%
 
 Tempo total da simulacao: 19 milissegundos
 
 ----------
 Simulacao: 10
-Semente rândomica utilizada: 1511524620484
+Semente rândomica utilizada: 1512645086191
 Parametros ACO:
-   Objetivo MTSP:	minimizar custo total
+   Objetivo MTSP:	minimizar maior rota (workload balance)
    Criterio de parada:	10 ciclos por execucao
    Tamanho da lista de candidatos:	20
    N (solucoes geradas a cada ciclo):	10
@@ -257,10 +257,10 @@ Busca Local:
 Resumo da simulacao:
 Dia de trabalho: 1	serviços: 16	equipes: 4
 Solução real:		maior rota: 8.163943658237624	custo total: 22.189698479774357  	solução:  0  1  2  3  4  0  5  6  7  8  0  9 10 11 12  0 13 14 15 16  0 
-Solução proposta:	maior rota: 7.567722724217683	custo total: 21.617631600321097  	solução:  0  5  4 12 10  9  0  3  2  1  8 14  7 13  0  6 16 15  0 11  0 
-Melhoramento:		maior rota: 7,3%	custo total: 2,58%
+Solução proposta:	maior rota: 7.343836767170853	custo total: 21.6136036529058  	solução:  0  2  1 16 14  7  8 13  0  3 12 10  9  0  6 11  0  4  5 15  0 
+Melhoramento:		maior rota: 10,05%	custo total: 2,6%
 
-Tempo total da simulacao: 19 milissegundos
+Tempo total da simulacao: 27 milissegundos
 
 ------------------------------
 Tempo total do experimento: 2147483647 milissegundos

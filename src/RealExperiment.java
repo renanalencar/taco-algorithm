@@ -21,9 +21,9 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
     private LogExperiment logExperiment;
     private LogExperiment log;
     public RealExperiment() throws IOException {
-    	
     	 this.logExperiment = LogExperiment.getInstance();
          this.logExperiment.writeF_REAL_SOLS("\r\nDia de trabalho: ");
+         this.log.teste.write(++log.i + " aquii");	
         // criando apenas estruturas, com tamanhos mínimos
         this.list_id_work_days = new IntList(1);
         this.current_work_day  = new WorkDay(-1);
@@ -50,7 +50,7 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
         int n_work_days = real_data.count_work_days();  // contando número de dias de trabalho na base de dados
         this.list_id_work_days = real_data.load_ids_work_days(n_work_days);  // criado a lista com as ids dos dias de trabalho
         //delete real_data;
-
+        log.teste.write("wor day " + n_work_days);
         for (int current_day = 0; current_day < n_work_days; current_day++) {
 
             if (INDEX_DAY_TEST != -1){

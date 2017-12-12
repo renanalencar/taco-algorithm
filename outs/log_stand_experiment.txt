@@ -1,0 +1,49 @@
+
+-----------------------------------------------------
+Experiment objective:		minimize longest route (workload balance)
+Type solutions:			basic MTSP: single depot and closed routes
+Model instance:			TSPLIB Eil51 (51 nodes)
+Salesmen number:		4
+Depot node:			0
+Independent executions:		10
+Stopping criterion:		10 cycles per execution
+
+Ant Colony System parameters:
+   N (iterations per cycle):	10
+   q0 (determinism level):	0.9
+   alfa (pheromone weight):	1
+   beta (visibility weight):	2
+   ksi (pheromone persit LPU):	0.1
+   ro (pheromone persit GPU):	0.1
+
+Experiment parameters:
+   Candidate list length:	20
+   Local Pheromone Update:	ON
+   Global Pheromone Update:	ON	--> best-so-far solution updating
+   Type cost matrix: 		double
+   Start node ants:		all starting from single depot
+   Check best ant repetitions:	1
+
+Local Search:
+   2-opt (all created solutions):		ON
+   3-opt (only best cycle solutions):		OFF
+
+Best solution of each execution:
+exec	longest		tsolut		cycle		time(ms)	seed execution
+1	152.9463849277704		553.9978589379675		8		116		1600806114
+2	164.97576648216634		590.6468540306736		4		37		1495892907
+3	155.84963251222203		588.4503324124772		8		50		1050769462
+4	161.0725728446119		623.5142171695182		10		50		295976122
+5	152.58281963079435		586.8895100644677		8		41		816872426
+6	147.71858097704072		564.3809492132372		7		48		696136226
+7	154.82473170666498		595.1123832291153		9		53		1545692393
+8	155.9066952707176		586.5554192921271		10		57		1063670593
+9	155.7843116580985		558.7196852272632		9		39		1351437071
+10	148.5461578350545		565.4509631447105		10		49		242523522
+
+Avgs	155.0207653845141		581.3718172721558		8.3		54.0
+SDs	5.199453163548802		20.983716553678963		1.8287822299126935		22.681367781605335
+
+Best cost:	147.71858097704072
+
+Total time experiment: 709 miliseconds
