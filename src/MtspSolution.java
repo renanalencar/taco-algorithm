@@ -219,13 +219,13 @@ public class MtspSolution implements ControlExperiment {
 
     //TODO Abrir e Salvar em arquivo
     public void save_how_list(BufferedWriter file_out) throws IOException {
-        file_out.write("maior rota: " + this.longest_route_cost + "\tcusto total: " + this.total_cost + "  \tsolução: ");
+        file_out.write("maior rota: " + String.format("%."+FLOAT_PRECISION+"f", this.longest_route_cost) + "\tcusto total: " + String.format("%."+FLOAT_PRECISION+"f", this.total_cost) + "  \tsolução: ");
         nodes_list.save(file_out);
         file_out.write("\r\n");
     }
 
     public void print() {
-        System.out.print("maior rota: " + this.longest_route_cost + "\tcusto total: " + this.total_cost + "  \tsolução:");
+        System.out.print("maior rota: " + String.format("%."+FLOAT_PRECISION+"f", this.longest_route_cost) + "\tcusto total: " + String.format("%."+FLOAT_PRECISION+"f", this.total_cost) + "  \tsolução:");
 //-----        nodes_list->print_add1();
         this.nodes_list.print();
         System.out.print("\r\n");
@@ -243,17 +243,16 @@ public class MtspSolution implements ControlExperiment {
             file_out.write(String.valueOf(nodes[nodes_list.value(i)].y()));
             file_out.write("\r\n");
         }
-        //TODO Configurar precisão do float
-        //file_out << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+
     }
 
     //TODO Verificar salvamento
     public void save_longest_cost(BufferedWriter file_out) throws IOException {
-        file_out.write(this.longest_route_cost + "\t");
+        file_out.write(String.format("%."+FLOAT_PRECISION+"f", this.longest_route_cost) + "\t");
     }
 
     //TODO Verificar salvamento
     public void save_total_cost(BufferedWriter file_out) throws IOException {
-        file_out.write(this.total_cost + "\t");
+        file_out.write(String.format("%."+FLOAT_PRECISION+"f", this.total_cost) + "\t");
     }
 }

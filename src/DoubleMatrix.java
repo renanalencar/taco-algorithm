@@ -42,7 +42,7 @@ public class DoubleMatrix {
                 if (i == j) {
                     System.out.print("\t" + 0.0);
                 } else {
-                    System.out.print("\t" + matrix[i][j]);
+                    System.out.print("\t" + String.format("%."+ControlExperiment.FLOAT_PRECISION+"f", matrix[i][j]));
                 }
             }
         }

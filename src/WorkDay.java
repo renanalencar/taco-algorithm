@@ -1,7 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DecimalFormat;
 
 /**
  * Classe que representa um dia de trabalho das equipes
@@ -43,7 +42,6 @@ public class WorkDay implements ControlExperiment {
     private double time_free_next_team;      // instante em que a equipe vai conluir o serviço atual
     private Route[] cur_executed_routes;      // as rotas das equipes em construção
 
-    private DecimalFormat df;
 
     public WorkDay(int current_id_work_day) throws IOException {
         this.id_work_day          = current_id_work_day;
@@ -72,9 +70,6 @@ public class WorkDay implements ControlExperiment {
         //TODO Configurar precisão do float
         //f_total_costs << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
         this.logExperiment = LogExperiment.getInstance();
-
-        this.df = new DecimalFormat();
-        this.df.setMaximumFractionDigits(FLOAT_PRECISION);
 
     }
 
@@ -117,12 +112,8 @@ public class WorkDay implements ControlExperiment {
         this.real_matrix.load_real_time_matrix(id_work_day, real_time_matrix);
 
         if (PRINT_COSTS_MATRIX == 1) {
-            //TODO Configurar precisão do float
-            //cout << setiosflags (ios::fixed) << setprecision(0);
             System.out.print("\r\nReal time ");
             real_time_matrix.print_matrix();
-            //TODO Configurar precisão do float
-            //cout << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
         }
 
         // criando estruturas com os dados de todos os serviços do dia
@@ -475,11 +466,7 @@ public class WorkDay implements ControlExperiment {
         double diff_total = total_real - total_proposed;
         double improvement_total = (diff_total / total_real) * 100;
 
-        //TODO Configurar precisão do float
-        //f_log_exper << setiosflags (ios::fixed) << setprecision(2);
-        f_log_exper.write("Melhoramento:\t\tmaior rota: " + df.format(improvement_longest) + "%\tcusto total: " + df.format(improvement_total) + "%\r\n");
-        //TODO Configurar precisão do float
-        //f_log_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+        f_log_exper.write("Melhoramento:\t\tmaior rota: " + String.format("%.2f", improvement_longest) + "%\tcusto total: " + String.format("%.2f", improvement_total) + "%\r\n");
 
         if (PRINT_EMERGENCY_CARE == 1){
             System.out.print("  Emergency care:\r\n");
@@ -541,7 +528,7 @@ public class WorkDay implements ControlExperiment {
         	this.logExperiment.f_longests.write("\r\n" + this.id_work_day + "\t");
         	this.logExperiment.f_total_costs.write( "\r\n" + this.id_work_day + "\t");
         }
-        System.out.println("---------------------------------------------------------------- aqui ----------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------");
         this.complete_final_solution.save_longest_cost(this.logExperiment.f_longests);
         this.complete_final_solution.save_total_cost(this.logExperiment.f_total_costs);
 
@@ -563,11 +550,7 @@ public class WorkDay implements ControlExperiment {
         double diff_total = total_real - total_proposed;
         double improvement_total = (diff_total / total_real) * 100;
 
-        //TODO Configurar precisão do float
-        //f_log_exper << setiosflags (ios::fixed) << setprecision(2);
-        f_log_exper.write("Melhoramento:\t\tmaior rota: " + df.format(improvement_longest) + "%\tcusto total: " + df.format(improvement_total) + "%\r\n");
-        //TODO Configurar precisão do float
-        //f_log_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+        f_log_exper.write("Melhoramento:\t\tmaior rota: " + String.format("%.2f", improvement_longest) + "%\tcusto total: " + String.format("%.2f", improvement_total) + "%\r\n");
 
         if (PRINT_EMERGENCY_CARE == 1) {
             System.out.print("  Emergency care:\r\n");

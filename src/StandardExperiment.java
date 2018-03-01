@@ -135,8 +135,7 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
             //this.log.f_log_stand_exper << setprecision(2);
             this.log.f_log_stand_exper.write("\r\nAvgs\t" + avglongests + "\t\t" + avgtsoluts + "\t\t" + avgcycles + "\t\t" + avgttimes + "\r\n");
             this.log.f_log_stand_exper.write("SDs\t" + sdlongests + "\t\t" + sdtsoluts + "\t\t" + sdcycles + "\t\t" + sdttimes + "\r\n");
-            //TODO Configuração precisão do ponto flutuante
-            //this.log.f_log_stand_exper << setprecision(FLOAT_PRECISION);
+
 
             this.log.f_log_stand_exper.write("\r\nBest cost:\t");
             if (APP_OBJECTIVE == 1) {  // minimizar a longest_route
@@ -223,16 +222,14 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
             this.log.f_log_stand_exper.write(MAX_CYCLES + " cycles per execution\r\n");
 
         this.log.f_log_stand_exper.write("\r\nAnt Colony System parameters:\r\n");
-        //TODO Configurar precisão do float
-        //this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(2);
-        this.log.f_log_stand_exper.write("   N (iterations per cycle):\t" + N + "\r\n");
-        this.log.f_log_stand_exper.write("   q0 (determinism level):\t" + Q0 + "\r\n");
-        this.log.f_log_stand_exper.write( "   alfa (pheromone weight):\t" + ALFA + "\r\n");
-        this.log.f_log_stand_exper.write("   beta (visibility weight):\t" + BETA + "\r\n");
-        this.log.f_log_stand_exper.write("   ksi (pheromone persit LPU):\t" + KSI + "\r\n");
-        this.log.f_log_stand_exper.write("   ro (pheromone persit GPU):\t" + RO + "\r\n");
-        //TODO Configurar precisão do float
-        //this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+
+        this.log.f_log_stand_exper.write("   N (iterations per cycle):\t" + String.format("%.2f", N) + "\r\n");
+        this.log.f_log_stand_exper.write("   q0 (determinism level):\t" + String.format("%.2f", Q0) + "\r\n");
+        this.log.f_log_stand_exper.write( "   alfa (pheromone weight):\t" + String.format("%.2f", ALFA) + "\r\n");
+        this.log.f_log_stand_exper.write("   beta (visibility weight):\t" + String.format("%.2f", BETA) + "\r\n");
+        this.log.f_log_stand_exper.write("   ksi (pheromone persit LPU):\t" + String.format("%.2f", KSI) + "\r\n");
+        this.log.f_log_stand_exper.write("   ro (pheromone persit GPU):\t" + String.format("%.2f", RO) + "\r\n");
+
 
         this.log.f_log_stand_exper.write("\r\nExperiment parameters:\r\n");
 
