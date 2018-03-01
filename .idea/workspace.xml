@@ -3,44 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2180b827-8200-4ddb-bb31-f5d82086afaa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/AcoMtspAlgorithm.class" afterPath="$PROJECT_DIR$/out/production/TACO/AcoMtspAlgorithm.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/AcsAlgorithm.class" afterPath="$PROJECT_DIR$/out/production/TACO/AcsAlgorithm.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Ant.class" afterPath="$PROJECT_DIR$/out/production/TACO/Ant.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Colony.class" afterPath="$PROJECT_DIR$/out/production/TACO/Colony.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/ControlExperiment.class" afterPath="$PROJECT_DIR$/out/production/TACO/ControlExperiment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/ControlSTACS.class" afterPath="$PROJECT_DIR$/out/production/TACO/ControlSTACS.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/DoubleMatrix.class" afterPath="$PROJECT_DIR$/out/production/TACO/DoubleMatrix.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/EuclideanGraph.class" afterPath="$PROJECT_DIR$/out/production/TACO/EuclideanGraph.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/IntList.class" afterPath="$PROJECT_DIR$/out/production/TACO/IntList.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Intersection.class" afterPath="$PROJECT_DIR$/out/production/TACO/Intersection.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/LocalSearch.class" afterPath="$PROJECT_DIR$/out/production/TACO/LocalSearch.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Main.class" afterPath="$PROJECT_DIR$/out/production/TACO/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/MtspInstance.class" afterPath="$PROJECT_DIR$/out/production/TACO/MtspInstance.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/MtspNearestNeighbor.class" afterPath="$PROJECT_DIR$/out/production/TACO/MtspNearestNeighbor.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/MtspSolution.class" afterPath="$PROJECT_DIR$/out/production/TACO/MtspSolution.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Node.class" afterPath="$PROJECT_DIR$/out/production/TACO/Node.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Random.class" afterPath="$PROJECT_DIR$/out/production/TACO/Random.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/RealData.class" afterPath="$PROJECT_DIR$/out/production/TACO/RealData.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/RealExperiment.class" afterPath="$PROJECT_DIR$/out/production/TACO/RealExperiment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/RealMatrix.class" afterPath="$PROJECT_DIR$/out/production/TACO/RealMatrix.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Route.class" afterPath="$PROJECT_DIR$/out/production/TACO/Route.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/ServiceOrder.class" afterPath="$PROJECT_DIR$/out/production/TACO/ServiceOrder.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/StandardExperiment.class" afterPath="$PROJECT_DIR$/out/production/TACO/StandardExperiment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/TacoAlgorithm.class" afterPath="$PROJECT_DIR$/out/production/TACO/TacoAlgorithm.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Utilities.class" afterPath="$PROJECT_DIR$/out/production/TACO/Utilities.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/WorkDay.class" afterPath="$PROJECT_DIR$/out/production/TACO/WorkDay.class" />
-      <change beforePath="$PROJECT_DIR$/outs/log_real_experiment.txt" afterPath="$PROJECT_DIR$/outs/log_real_experiment.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/longests.txt" afterPath="$PROJECT_DIR$/outs/longests.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/plot_final_created_sols_day.txt" afterPath="$PROJECT_DIR$/outs/plot_final_created_sols_day.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/plot_real_sols.txt" afterPath="$PROJECT_DIR$/outs/plot_real_sols.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/simulations_resume.txt" afterPath="$PROJECT_DIR$/outs/simulations_resume.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/time_execs.txt" afterPath="$PROJECT_DIR$/outs/time_execs.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/total_costs.txt" afterPath="$PROJECT_DIR$/outs/total_costs.txt" />
-      <change beforePath="$PROJECT_DIR$/src/ControlExperiment.java" afterPath="$PROJECT_DIR$/src/ControlExperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/DoubleMatrix.java" afterPath="$PROJECT_DIR$/src/DoubleMatrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/MtspSolution.java" afterPath="$PROJECT_DIR$/src/MtspSolution.java" />
-      <change beforePath="$PROJECT_DIR$/src/StandardExperiment.java" afterPath="$PROJECT_DIR$/src/StandardExperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/WorkDay.java" afterPath="$PROJECT_DIR$/src/WorkDay.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -211,6 +173,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -327,6 +290,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="SearchEverywhereHistoryKey" value=".close()&#9;null&#9;null&#10;close()&#9;null&#9;null&#10;total_costs&#9;PSI&#9;JAVA://WorkDay#f_total_costs" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -415,7 +379,7 @@
       <workItem from="1513112581971" duration="2005000" />
       <workItem from="1513118458444" duration="1421000" />
       <workItem from="1519755967984" duration="3593000" />
-      <workItem from="1519907936875" duration="87000" />
+      <workItem from="1519907936875" duration="271000" />
     </task>
     <task id="LOCAL-00001" summary="Correção dos erros de array.">
       <created>1511308224721</created>
@@ -452,11 +416,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511490024572</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Correções.">
+      <created>1519908044528</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519908044528</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100843000" />
+    <option name="totallyTimeSpent" value="101027000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,11 +442,11 @@
     <frame x="0" y="23" width="1280" height="720" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3824" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3824" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3824" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.261348" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
