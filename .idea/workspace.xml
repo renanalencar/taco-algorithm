@@ -379,7 +379,7 @@
       <workItem from="1513112581971" duration="2005000" />
       <workItem from="1513118458444" duration="1421000" />
       <workItem from="1519755967984" duration="3593000" />
-      <workItem from="1519907936875" duration="369000" />
+      <workItem from="1519907936875" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="Correção dos erros de array.">
       <created>1511308224721</created>
@@ -430,11 +430,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519908307333</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Correções.">
+      <created>1519908392756</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1519908392756</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101125000" />
+    <option name="totallyTimeSpent" value="101246000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
