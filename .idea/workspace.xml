@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2180b827-8200-4ddb-bb31-f5d82086afaa" name="Default" comment="Correções.">
+    <list default="true" id="2180b827-8200-4ddb-bb31-f5d82086afaa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/StandardExperiment.java" afterPath="$PROJECT_DIR$/src/StandardExperiment.java" />
     </list>
@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/StandardExperiment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+              <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -364,7 +364,7 @@
       <workItem from="1519907936875" duration="1355000" />
       <workItem from="1519909510098" duration="1429000" />
       <workItem from="1519912234176" duration="287000" />
-      <workItem from="1520777069484" duration="3588000" />
+      <workItem from="1520777069484" duration="3625000" />
     </task>
     <task id="LOCAL-00001" summary="Correção dos erros de array.">
       <created>1511308224721</created>
@@ -457,11 +457,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520777267560</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Correções do GitHub.">
+      <created>1520781228494</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1520781228494</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107415000" />
+    <option name="totallyTimeSpent" value="107452000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -543,7 +550,8 @@
     <MESSAGE value="Correção dos erros de array." />
     <MESSAGE value="Mudança do método load_ids_work_days de void para retornar uma IntList." />
     <MESSAGE value="Correções." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correções." />
+    <MESSAGE value="Correções do GitHub." />
+    <option name="LAST_COMMIT_MESSAGE" value="Correções do GitHub." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,7 +1005,7 @@
     <entry file="file://$PROJECT_DIR$/src/StandardExperiment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="26" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
           <folding />
         </state>
       </provider>

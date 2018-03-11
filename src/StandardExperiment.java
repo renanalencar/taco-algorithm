@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 /**
- * @author renanalencar***
+ * @author renanalencar
  * @version 1.0
  * @since 2017-11-01
  *
