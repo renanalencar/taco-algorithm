@@ -15,7 +15,6 @@ public class LocalSearch implements ControlExperiment, ControlSTACS {
 
     LocalSearch(double time_ini_execution, DoubleMatrix cost_matrix) {
         this.depot = DEPOT_INDEX;
-        //TODO Copiar a matrix de custo
         this.cost_matrix = cost_matrix;
         this.time_ini_execution = time_ini_execution;
     }
@@ -103,7 +102,7 @@ public class LocalSearch implements ControlExperiment, ControlSTACS {
                         if (new_best_cost < current_best_cost){    // a nova solução é melhor, de acordo com o objetivo
                             //delete solution;                       // liberando a memória de solution
                             solution = new_sol;                    // solution passa a apontar para a nova solução
-                            //TODO traduzir clock para Java
+                            //TODO checar a tradução do clock para Java
                             solution.set_time(System.currentTimeMillis() - time_ini_execution);  // atualizando o tempo de criação da solução
                             updated_solution = true;
 
@@ -356,7 +355,7 @@ public class LocalSearch implements ControlExperiment, ControlSTACS {
                             case 1: {
                                 //delete solution;
                                 solution = new_sol_1;
-                                //TODO traduzir clock para Java
+                                //TODO checar a tradução do clock para Java
                                 solution.set_time(System.currentTimeMillis() - time_ini_execution);  // atualizando o tempo de criação da solução
                                 //delete new_sol_4;
                                 //delete new_sol_3;
@@ -366,7 +365,7 @@ public class LocalSearch implements ControlExperiment, ControlSTACS {
                             case 2: {
                                 //delete solution;
                                 solution = new_sol_2;
-                                //TODO traduzir clock para Java
+                                //TODO checar a tradução do clock para Java
                                 solution.set_time(System.currentTimeMillis() - time_ini_execution);  // atualizando o tempo de criação da solução
                                 //delete new_sol_4;
                                 //delete new_sol_3;
@@ -376,7 +375,7 @@ public class LocalSearch implements ControlExperiment, ControlSTACS {
                             case 3: {
                                 //delete solution;
                                 solution = new_sol_3;
-                                //TODO traduzir clock para Java
+                                //TODO checar a tradução do clock para Java
                                 solution.set_time(System.currentTimeMillis() - time_ini_execution);  // atualizando o tempo de criação da solução
                                 //delete new_sol_4;
                                 //delete new_sol_2;
@@ -386,7 +385,7 @@ public class LocalSearch implements ControlExperiment, ControlSTACS {
                             case 4: {
                                 //delete solution;
                                 solution = new_sol_4;
-                                //TODO traduzir clock para Java
+                                //TODO checar a tradução do clock para Java
                                 solution.set_time(System.currentTimeMillis() - time_ini_execution);  // atualizando o tempo de criação da solução
                                 //delete new_sol_3;
                                 //delete new_sol_2;

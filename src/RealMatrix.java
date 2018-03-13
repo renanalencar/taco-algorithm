@@ -23,7 +23,7 @@ public class RealMatrix {
     private double real_distance;
     private int real_time_cost;
 
-    //TODO Verificar carregamento
+    //TODO checar se está a fazer o carregamento
     public RealMatrix() throws FileNotFoundException {
         this.matrix_file_name   = "data/costs.txt";
         FileInputStream fstream = new FileInputStream(this.matrix_file_name);
@@ -31,7 +31,7 @@ public class RealMatrix {
         this.matrix_file        = new BufferedReader(new InputStreamReader(in));
     }
 
-    //TODO Verificar carregamento
+    //TODO checar se está a fazer o carregamento
     public void read_next_register() throws IOException {
 
         String line;
@@ -77,7 +77,7 @@ public class RealMatrix {
         return s != null && s.matches("[-+]?\\d*\\.?\\d+");
     }
 
-    //TODO Está alterando um variável externa
+    //TODO checar se está alterando um variável externa de fato
     public void load_real_distance_matrix(int selected_id_work_day, DoubleMatrix real_distance_matrix) throws IOException {
         this.matrix_file.close();
 
@@ -98,7 +98,7 @@ public class RealMatrix {
         }
     }
 
-    //TODO Está alterando um variável externa
+    //TODO checar se está alterando um variável externa de fato
     public void load_real_time_matrix(int selected_id_work_day, DoubleMatrix real_time_matrix) throws IOException {
         this.matrix_file.close();
 

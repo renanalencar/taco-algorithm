@@ -1,5 +1,4 @@
 import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -23,25 +22,19 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
     public RealExperiment() throws IOException {
     	 this.logExperiment = LogExperiment.getInstance();
          this.logExperiment.writeF_REAL_SOLS("\r\nDia de trabalho: ");
-         this.log.teste.write(++log.i + " aquii");	
+         //this.log.teste.write(++log.i + " aquii");
         // criando apenas estruturas, com tamanhos mínimos
         this.list_id_work_days = new IntList(1);
         this.current_work_day  = new WorkDay(-1);
 
         // abrindo arquivos de resultados
         //this.log.f_log_exper = new BufferedWriter(new FileWriter("outs/log_real_experiment.txt"));
-        //TODO Configuração precisão do float
-        //f_log_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
 
-//        // arquivo com os custos gerados para cada dia de trabalho em cada simulação:
-//        this.log.f_simul_res = new BufferedWriter(new FileWriter("outs/simulations_resume.txt"));
-//
-//        //TODO Configuração precisão do float
-//        //f_simul_res << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
-//
-//        this.log.f_time_execs = new BufferedWriter(new FileWriter("outs/time_execs.txt"));
-        //TODO Configuração precisão do float
-        //f_time_execs << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+        // arquivo com os custos gerados para cada dia de trabalho em cada simulação:
+        //this.log.f_simul_res = new BufferedWriter(new FileWriter("outs/simulations_resume.txt"));
+
+        //this.log.f_time_execs = new BufferedWriter(new FileWriter("outs/time_execs.txt"));
+
     }
 
     public void run_real_experiment() throws IOException {
@@ -50,7 +43,7 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
         int n_work_days = real_data.count_work_days();  // contando número de dias de trabalho na base de dados
         this.list_id_work_days = real_data.load_ids_work_days(n_work_days);  // criado a lista com as ids dos dias de trabalho
         //delete real_data;
-        log.teste.write("wor day " + n_work_days);
+        //log.teste.write("workday " + n_work_days);
         for (int current_day = 0; current_day < n_work_days; current_day++) {
 
             if (INDEX_DAY_TEST != -1){
@@ -121,14 +114,12 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
             this.log.f_log_exper.write(MAX_CYCLES + " ciclos por execucao\r\n");
         this.log.f_log_exper.write("   Tamanho da lista de candidatos:\t" + CL_LENGTH + "\r\n");
 
-        //TODO Configuração precisão do float
-        //f_log_exper << setiosflags (ios::fixed) << setprecision(2);
         this.log.f_log_exper.write("   N (solucoes geradas a cada ciclo):\t" + N + "\r\n");
-        this.log.f_log_exper.write("   q0 (nível de determinismo):\t\t" + Q0 + "\r\n");
+        this.log.f_log_exper.write("   q0 (nível de determinismo):\t\t" + String.format("%.2f", Q0) + "\r\n");
         this.log.f_log_exper.write("   alfa (peso do feromonio):\t\t" + ALFA + "\r\n");
         this.log.f_log_exper.write("   beta (peso da visibilidade):\t\t" + BETA + "\r\n");
-        this.log.f_log_exper.write("   ksi (persitencia do feromonio nas atualizacoes locais):\t" + KSI + "\r\n");
-        this.log.f_log_exper.write("   ro (persitencia do feromonio nas atualizacoes globais):\t" + RO + "\r\n");
+        this.log.f_log_exper.write("   ksi (persitencia do feromonio nas atualizacoes locais):\t" + String.format("%.2f", KSI) + "\r\n");
+        this.log.f_log_exper.write("   ro (persitencia do feromonio nas atualizacoes globais):\t" + String.format("%.2f", RO) + "\r\n");
 
         this.log.f_log_exper.write("\r\nBusca Local:\r\n");
         this.log.f_log_exper.write("   2-opt (todas as solucoes criadas):\t\t");
@@ -143,7 +134,6 @@ public class RealExperiment implements ControlExperiment, ControlSTACS {
             this.log.f_log_exper.write("ON\r\n");
         else
             this.log.f_log_exper.write("OFF\r\n");
-        //TODO Configuração precisão do float
-        //f_log_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+
     }
 }

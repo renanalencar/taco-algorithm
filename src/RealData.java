@@ -28,7 +28,7 @@ public class RealData implements ControlExperiment {
     private int km_ini;
     private int km_end;
 
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public RealData() throws FileNotFoundException {
         this.depot = DEPOT_INDEX;
         this.data_file_name = "data/data.txt";
@@ -42,7 +42,7 @@ public class RealData implements ControlExperiment {
     }
 
     // retorna ao início do arquivo
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public void go_init_file() throws IOException {
         this.data_file.close();
 
@@ -54,7 +54,7 @@ public class RealData implements ControlExperiment {
 
     // lê o próximo registro (linha) do arquivo
     // os tempos de execução são convertidos para segundos:
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public void read_next_register() throws IOException {
         String line;
         Vector<Integer> output = new Vector<Integer>();
@@ -106,7 +106,7 @@ public class RealData implements ControlExperiment {
     }
 
     // retorna o número de dias de serviço no arquivo
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public int count_work_days() throws IOException {
         boolean first_register = true;
         int counter_days = 0;
@@ -119,7 +119,7 @@ public class RealData implements ControlExperiment {
         this.data_file = new BufferedReader(new InputStreamReader(in));
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
 
             this.read_next_register();
            
@@ -141,7 +141,7 @@ public class RealData implements ControlExperiment {
     }
 
     // carregas as ids dos dias no vetor
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     //public void load_ids_work_days(IntList list_id_work_days, int n_work_days) throws IOException {
     public IntList load_ids_work_days(int n_work_days) throws IOException {
         //delete list_id_work_days;
@@ -158,7 +158,7 @@ public class RealData implements ControlExperiment {
         this.data_file = new BufferedReader(new InputStreamReader(in));
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes  por inteiro
 
             this.read_next_register();
 
@@ -183,7 +183,7 @@ public class RealData implements ControlExperiment {
     }
 
     // retorna a qtde de serviços de um dia
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public int count_services(int selected_id_work_day) throws IOException {
         int counter_services = 0;
 
@@ -194,7 +194,7 @@ public class RealData implements ControlExperiment {
         this.data_file = new BufferedReader(new InputStreamReader(in));
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
 
             this.read_next_register();
 
@@ -213,7 +213,7 @@ public class RealData implements ControlExperiment {
     }
 
     // retorna a qtde de equipes de um dia
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public int count_teams(int selected_id_work_day) throws IOException {
         int counter_teams = 0;
 
@@ -225,7 +225,7 @@ public class RealData implements ControlExperiment {
 
         int current_team = 0;
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
 
             this.read_next_register();
 
@@ -252,7 +252,7 @@ public class RealData implements ControlExperiment {
         return counter_teams;
     }
 
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
 //  public void load_service_orders(int selected_id_work_day, day_services) throws IOException {
     public ServiceOrder[] load_service_orders(int selected_id_work_day, int n_points) throws IOException {
         this.data_file.close();
@@ -264,7 +264,7 @@ public class RealData implements ControlExperiment {
         ServiceOrder[] day_services = new ServiceOrder[n_points];
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
 
             this.read_next_register();
 
@@ -286,7 +286,7 @@ public class RealData implements ControlExperiment {
         return day_services;
     }
 
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public void load_euclidean_graph(int selected_id_work_day, MtspInstance instance) throws IOException {
         this.data_file.close();
         //data_file.open(data_file_name, ios::in);
@@ -295,7 +295,7 @@ public class RealData implements ControlExperiment {
         this.data_file = new BufferedReader(new InputStreamReader(in));
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
 
             this.read_next_register();
 
@@ -314,7 +314,7 @@ public class RealData implements ControlExperiment {
         }
     }
 
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public int x_depot() throws IOException {
         int coord_x = -1;
 
@@ -325,7 +325,7 @@ public class RealData implements ControlExperiment {
         this.data_file = new BufferedReader(new InputStreamReader(in));
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
 
             this.read_next_register();
 
@@ -341,7 +341,7 @@ public class RealData implements ControlExperiment {
         return coord_x;
     }
 
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
     public int y_depot() throws IOException {
         int coord_y = -1;
 
@@ -352,7 +352,7 @@ public class RealData implements ControlExperiment {
         this.data_file = new BufferedReader(new InputStreamReader(in));
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
 
             this.read_next_register();
 
@@ -369,7 +369,7 @@ public class RealData implements ControlExperiment {
     }
 
     // é definido um novo tempo de despacho para os serviços quando calculados os custos das rotas reais utilizando os dados considerados.
-    //TODO Abrir e salvar arquivo
+    //TODO checar se está a abrir e salvar arquivo
 //  public void load_real_solution(int selected_id_work_day, MtspSolution real_solution, MtspInstance instance, ServiceOrder day_services[]) throws IOException {
     public MtspSolution load_real_solution(int selected_id_work_day, int n_points, int n_teams, MtspInstance instance, ServiceOrder day_services[]) throws IOException {
         DoubleMatrix cost_matrix = instance.get_cost_matrix();
@@ -388,7 +388,7 @@ public class RealData implements ControlExperiment {
         boolean first_point_solution = true;
 
         boolean flag = true;
-        while (flag) {  // lendo todo o arquivo das matrizes
+        while (flag) {  // lendo o arquivo das matrizes por inteiro
             this.read_next_register();
             if (this.id_register != -1){ // fim do arquivo
                 if (this.id_work_day == selected_id_work_day){  // este serviço faz parte da solução real

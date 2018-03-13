@@ -11,26 +11,22 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
     private long seed_random;           // semente dos randomicos do experimento
     private LogExperiment log;
 
-    //TODO Verificar carregamento de arquivo
     public StandardExperiment() throws IOException {
     	log = LogExperiment.getInstance();
         depot = DEPOT_INDEX;
        // this.log.f_log_stand_exper = new BufferedWriter(new FileWriter("outs/log_stand_experiment.txt"));
-        //TODO configuração a precisão do float
-        //this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
-//        this.log.f_sols_aco = new BufferedWriter(new FileWriter("outs/plot_best_sols_aco.txt"));
-        //TODO configuração a precisão do float
-        //this.log.f_sols_aco << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+       // this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+       // this.log.f_sols_aco = new BufferedWriter(new FileWriter("outs/plot_best_sols_aco.txt"));
+       // this.log.f_sols_aco << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
     }
 
-    //TODO Verificar carregamento de arquivo
     /**
      * Método que carrega a instância de ControlACO.hpp
      */
     public void run_standard_experiment() throws IOException {
         // cada loop é um experimento independente
         for (int exper_counter = 0; exper_counter < 1; exper_counter++) {
-        	System.out.println(++log.i + " aquii");
+        	//System.out.println(++log.i + " aquii");
             //double time_ini_experiment = (double)clock();  // instante do início do experimento
             long time_ini_experiment = System.currentTimeMillis();
 
@@ -46,9 +42,6 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
                 model_instance.print_instance();
             }
 
-            //TODO Configurar impressão de pontos flutuantes
-            // formato de impressão de pontos flutuantes:
-            //cout << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
 
             // melhores resultados do experimento:
             double best_longest_exper = 0.0;  // minimizar rota mais longa
@@ -63,6 +56,7 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
             // cada loop é uma execuçao independente:
             for (int exec_counter = 0; exec_counter < N_EXECUTIONS; exec_counter++){  // execuções do algoritmo
                 if(PISO == 1) {
+                    System.out.print("\r-----------------------------------------------------\r");
                     System.out.print("\r\nExecution " + (exec_counter + 1) + "\r\n");
                 }
 
@@ -101,7 +95,7 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
                 int cycle      = aco_solution.get_iteration_sol();
                 int time       = aco_solution.get_time_sol();
 
-                //TODO checar se este casting é possível
+                //TODO checar se esta conversão é possível
                 int seed_r     =  Math.toIntExact(aco_solution.get_seed_rand());
 
                 // atualizando melhores resultados do experimento:
@@ -111,7 +105,7 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
                 if ((exec_counter == 0) || (tsolut < best_totsol_exper)){
                     best_totsol_exper = tsolut;
                 }
-                this.log.f_log_stand_exper.write((exec_counter+1) + "\t" + longest + "\t\t" + tsolut + "\t\t" + cycle + "\t\t" + time + "\t\t" + seed_r + "\r\n");
+                this.log.f_log_stand_exper.write((exec_counter+1) + "\t" + String.format("%."+FLOAT_PRECISION+"f",longest) + "\t\t" + String.format("%."+FLOAT_PRECISION+"f",tsolut) + "\t\t" + cycle + "\t\t" + time + "\t\t" + seed_r + "\r\n");
 
                 //delete aco_solution;
 
@@ -131,17 +125,15 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
             double sdcycles = Utilities.std_dev(cycle_best_sols, N_EXECUTIONS);
             double sdttimes = Utilities.std_dev(time_best_sols, N_EXECUTIONS);
 
-            //TODO Configuração precisão do ponto flutuante
-            //this.log.f_log_stand_exper << setprecision(2);
-            this.log.f_log_stand_exper.write("\r\nAvgs\t" + avglongests + "\t\t" + avgtsoluts + "\t\t" + avgcycles + "\t\t" + avgttimes + "\r\n");
-            this.log.f_log_stand_exper.write("SDs\t" + sdlongests + "\t\t" + sdtsoluts + "\t\t" + sdcycles + "\t\t" + sdttimes + "\r\n");
+            this.log.f_log_stand_exper.write("\r\nAvgs\t" + String.format("%.2f",avglongests) + "\t\t" + String.format("%.2f",avgtsoluts) + "\t\t" + String.format("%.2f",avgcycles) + "\t\t" + String.format("%.2f",avgttimes) + "\r\n");
+            this.log.f_log_stand_exper.write("SDs\t" + String.format("%.2f",sdlongests) + "\t\t" + String.format("%.2f",sdtsoluts) + "\t\t" + String.format("%.2f",sdcycles) + "\t\t" + String.format("%.2f",sdttimes) + "\r\n");
 
 
             this.log.f_log_stand_exper.write("\r\nBest cost:\t");
             if (APP_OBJECTIVE == 1) {  // minimizar a longest_route
-                this.log.f_log_stand_exper.write(String.valueOf(best_longest_exper));
+                this.log.f_log_stand_exper.write(String.valueOf(String.format("%.2f",best_longest_exper)));
             } else {
-                this.log.f_log_stand_exper.write(String.valueOf(best_totsol_exper));
+                this.log.f_log_stand_exper.write(String.valueOf(String.format("%.2f",best_totsol_exper)));
             }
             this.log.f_log_stand_exper.write("\r\n");
 
@@ -161,7 +153,6 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
     }
 
 
-    //TODO Verificar a gravação do arquivo
     /**
      * Método que salva o cabeçalho do experimento
      * @throws IOException
@@ -223,10 +214,10 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
 
         this.log.f_log_stand_exper.write("\r\nAnt Colony System parameters:\r\n");
 
-        this.log.f_log_stand_exper.write("   N (iterations per cycle):\t" + String.format("%.2f", N) + "\r\n");
+        this.log.f_log_stand_exper.write("   N (iterations per cycle):\t" + N + "\r\n");
         this.log.f_log_stand_exper.write("   q0 (determinism level):\t" + String.format("%.2f", Q0) + "\r\n");
-        this.log.f_log_stand_exper.write( "   alfa (pheromone weight):\t" + String.format("%.2f", ALFA) + "\r\n");
-        this.log.f_log_stand_exper.write("   beta (visibility weight):\t" + String.format("%.2f", BETA) + "\r\n");
+        this.log.f_log_stand_exper.write( "   alfa (pheromone weight):\t" + ALFA + "\r\n");
+        this.log.f_log_stand_exper.write("   beta (visibility weight):\t" + BETA + "\r\n");
         this.log.f_log_stand_exper.write("   ksi (pheromone persit LPU):\t" + String.format("%.2f", KSI) + "\r\n");
         this.log.f_log_stand_exper.write("   ro (pheromone persit GPU):\t" + String.format("%.2f", RO) + "\r\n");
 

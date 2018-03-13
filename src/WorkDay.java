@@ -58,16 +58,13 @@ public class WorkDay implements ControlExperiment {
         this.current_aco_solution    = new MtspSolution(1,1);
 
         // arquivo para gravação das soluções reais para plotagem
-       // this.f_real_sols = new BufferedWriter(new FileWriter("outs/plot_real_sols.txt"));
-        //TODO Configurar precisão do float
+        // this.f_real_sols = new BufferedWriter(new FileWriter("outs/plot_real_sols.txt"));
         //f_real_sols << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
 
         //this.f_longests = new BufferedWriter(new FileWriter("outs/longests.txt"));
-        //TODO Configurar precisão do float
         //f_longests << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
 
-       // this.f_total_costs = new BufferedWriter(new FileWriter("outs/total_costs.txt"));
-        //TODO Configurar precisão do float
+        // this.f_total_costs = new BufferedWriter(new FileWriter("outs/total_costs.txt"));
         //f_total_costs << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
         this.logExperiment = LogExperiment.getInstance();
 

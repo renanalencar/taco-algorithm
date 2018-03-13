@@ -134,7 +134,6 @@ public class EuclideanGraph implements ControlExperiment, ControlSTACS {
             this.euclidean_matrix = new DoubleMatrix(this.n_nodes);
 
             // carregando instância do arquivo:
-            // TODO Verificar carregamento
             FileInputStream fstream = new FileInputStream(this.file_name);
             DataInputStream in      = new DataInputStream(fstream);
             this.file_load          = new BufferedReader(new InputStreamReader(in));

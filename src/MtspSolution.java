@@ -58,7 +58,7 @@ public class MtspSolution implements ControlExperiment {
      * @param index_end
      * @param cost_matrix
      */
-    //TODO Altera uma variável externa
+    //TODO checar se está a alterar uma variável externa
     public void reverse(int index_start, int index_end,  DoubleMatrix cost_matrix) {
         nodes_list.reverse(index_start, index_end);  // reversão sem considerar nós depósitos
 //-----        nodes_list->reverse_no_depot(index_start, index_end);  // reversão mantendo os depositos em suas posições na solução
@@ -72,7 +72,7 @@ public class MtspSolution implements ControlExperiment {
      * @param index_j
      * @param cost_matrix
      */
-    //TODO Altera uma variável externa
+    //TODO checar se está a alterar uma variável externa
     public void change_nodes(int index_i, int index_j, DoubleMatrix cost_matrix) {
         // alterando os nós na lista de nós:
         this.nodes_list.change_values(index_i, index_j);
@@ -108,7 +108,7 @@ public class MtspSolution implements ControlExperiment {
      * Método que atualiza total_cost e longest_route_cost
      * @param cost_matrix
      */
-    //TODO Altera uma variável externa
+    //TODO checar se está a alterar uma variável externa
     public void recalculate_solution(DoubleMatrix cost_matrix) {
         this.total_cost = 0.0;
         this.longest_route_cost = 0.0;
@@ -217,7 +217,7 @@ public class MtspSolution implements ControlExperiment {
         return this.nodes_list.next_value(current_node);
     }
 
-    //TODO Abrir e Salvar em arquivo
+    //TODO checar se faz o salvamento
     public void save_how_list(BufferedWriter file_out) throws IOException {
         file_out.write("maior rota: " + String.format("%."+FLOAT_PRECISION+"f", this.longest_route_cost) + "\tcusto total: " + String.format("%."+FLOAT_PRECISION+"f", this.total_cost) + "  \tsolução: ");
         nodes_list.save(file_out);
@@ -231,10 +231,9 @@ public class MtspSolution implements ControlExperiment {
         System.out.print("\r\n");
     }
 
-    //TODO Verificar salvamento
+    //TODO checar se faz o salvamento
     public void save_to_plot(BufferedWriter file_out, Node nodes[]) throws IOException {
-        //TODO Configurar precisão do float
-        //file_out << setiosflags (ios::fixed) << setprecision(0);
+
         if (this.random_seed != -1)
             file_out.write("Semente randômica: " + this.random_seed + "\r\n");
         for (int i = 0; i < this.nodes_list.n_items(); i++) {
@@ -246,12 +245,12 @@ public class MtspSolution implements ControlExperiment {
 
     }
 
-    //TODO Verificar salvamento
+    //TODO checar se faz o salvamento
     public void save_longest_cost(BufferedWriter file_out) throws IOException {
         file_out.write(String.format("%."+FLOAT_PRECISION+"f", this.longest_route_cost) + "\t");
     }
 
-    //TODO Verificar salvamento
+    //TODO checar se faz o salvamento
     public void save_total_cost(BufferedWriter file_out) throws IOException {
         file_out.write(String.format("%."+FLOAT_PRECISION+"f", this.total_cost) + "\t");
     }

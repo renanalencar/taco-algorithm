@@ -93,7 +93,7 @@ public class ServiceOrder {
         System.out.print("\ttipo: " + this.type_service + "\t\thorario de despacho: " + this.time_dispatch + "  \ttempo de execução: " + this.time_execution + "\r\n");
     }
 
-    //TODO abrir e escrever em arquivo
+    //TODO checar se está a abrir e escrever em arquivo
     public void save_service_order(BufferedWriter file_out) throws IOException {
         file_out.write("\ttipo: ");
         if (type_service == 0)
