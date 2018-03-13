@@ -1,0 +1,47 @@
+término dos arquivos: -1 na primeira coluna (id-registro)
+
+plot_real_sols.txt
+
+coluna
+1	nodo	
+2	coord_utm_x
+3	coord_utm_y
+--------------------------
+
+longests.txt
+
+coluna	
+1	workday
+2	custo_mais_longo
+x   custo_mais_longo
+--------------------------
+
+simluations_resume.txt
+
+coluna	
+1	workday
+2	custo_mais_longo
+3   custo_total
+4   tempo_total
+--------------------------
+
+time_execs.txt
+
+coluna	
+1	workday
+x	tempo_exec_simulacao
+--------------------------
+
+total_costs.txt
+
+coluna	
+1	workday
+x	custo_total
+--------------------------
+
+plot_final_created_sols_day.txt
+
+coluna	
+1	nodo	
+2	coord_utm_x
+3	coord_utm_y

@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2180b827-8200-4ddb-bb31-f5d82086afaa" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/outs/outs_estrutura.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/AcsAlgorithm.class" afterPath="$PROJECT_DIR$/out/production/TACO/AcsAlgorithm.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/ControlExperiment.class" afterPath="$PROJECT_DIR$/out/production/TACO/ControlExperiment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/EuclideanGraph.class" afterPath="$PROJECT_DIR$/out/production/TACO/EuclideanGraph.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/LocalSearch.class" afterPath="$PROJECT_DIR$/out/production/TACO/LocalSearch.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/Main.class" afterPath="$PROJECT_DIR$/out/production/TACO/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/MtspSolution.class" afterPath="$PROJECT_DIR$/out/production/TACO/MtspSolution.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/RealExperiment.class" afterPath="$PROJECT_DIR$/out/production/TACO/RealExperiment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/StandardExperiment.class" afterPath="$PROJECT_DIR$/out/production/TACO/StandardExperiment.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/TACO/WorkDay.class" afterPath="$PROJECT_DIR$/out/production/TACO/WorkDay.class" />
-      <change beforePath="$PROJECT_DIR$/outs/log_real_experiment.txt" afterPath="$PROJECT_DIR$/outs/log_real_experiment.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/log_stand_experiment.txt" afterPath="$PROJECT_DIR$/outs/log_stand_experiment.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/longests.txt" afterPath="$PROJECT_DIR$/outs/longests.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/plot_best_sols_aco.txt" afterPath="$PROJECT_DIR$/outs/plot_best_sols_aco.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/plot_final_created_sols_day.txt" afterPath="$PROJECT_DIR$/outs/plot_final_created_sols_day.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/simulations_resume.txt" afterPath="$PROJECT_DIR$/outs/simulations_resume.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/teste.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/outs/time_execs.txt" afterPath="$PROJECT_DIR$/outs/time_execs.txt" />
-      <change beforePath="$PROJECT_DIR$/outs/total_costs.txt" afterPath="$PROJECT_DIR$/outs/total_costs.txt" />
-      <change beforePath="$PROJECT_DIR$/src/AcsAlgorithm.java" afterPath="$PROJECT_DIR$/src/AcsAlgorithm.java" />
-      <change beforePath="$PROJECT_DIR$/src/ControlExperiment.java" afterPath="$PROJECT_DIR$/src/ControlExperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/EuclideanGraph.java" afterPath="$PROJECT_DIR$/src/EuclideanGraph.java" />
-      <change beforePath="$PROJECT_DIR$/src/LocalSearch.java" afterPath="$PROJECT_DIR$/src/LocalSearch.java" />
-      <change beforePath="$PROJECT_DIR$/src/LogExperiment.java" afterPath="$PROJECT_DIR$/src/LogExperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/MtspSolution.java" afterPath="$PROJECT_DIR$/src/MtspSolution.java" />
-      <change beforePath="$PROJECT_DIR$/src/RealData.java" afterPath="$PROJECT_DIR$/src/RealData.java" />
-      <change beforePath="$PROJECT_DIR$/src/RealExperiment.java" afterPath="$PROJECT_DIR$/src/RealExperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/RealMatrix.java" afterPath="$PROJECT_DIR$/src/RealMatrix.java" />
-      <change beforePath="$PROJECT_DIR$/src/ServiceOrder.java" afterPath="$PROJECT_DIR$/src/ServiceOrder.java" />
-      <change beforePath="$PROJECT_DIR$/src/StandardExperiment.java" afterPath="$PROJECT_DIR$/src/StandardExperiment.java" />
-      <change beforePath="$PROJECT_DIR$/src/WorkDay.java" afterPath="$PROJECT_DIR$/src/WorkDay.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -324,7 +295,7 @@
       <workItem from="1519909510098" duration="1429000" />
       <workItem from="1519912234176" duration="287000" />
       <workItem from="1520777069484" duration="4393000" />
-      <workItem from="1520949084450" duration="5515000" />
+      <workItem from="1520949084450" duration="5608000" />
     </task>
     <task id="LOCAL-00001" summary="Correção dos erros de array.">
       <created>1511308224721</created>
@@ -438,11 +409,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520781303284</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Correções de erros e remoção de alguns TODOs.">
+      <created>1520970442500</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1520970442501</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113735000" />
+    <option name="totallyTimeSpent" value="113828000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,7 +433,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37964237" sideWeight="0.47738287" order="6" side_tool="false" content_ui="tabs" />
@@ -470,7 +447,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.4450727" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30775446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30775446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -526,7 +503,8 @@
     <MESSAGE value="Correções." />
     <MESSAGE value="Correções do GitHub." />
     <MESSAGE value="Correções do IntelliJ." />
-    <option name="LAST_COMMIT_MESSAGE" value="Correções do IntelliJ." />
+    <MESSAGE value="Correções de erros e remoção de alguns TODOs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Correções de erros e remoção de alguns TODOs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -858,6 +836,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="291" column="81" lean-forward="false" selection-start-line="291" selection-start-column="75" selection-end-line="291" selection-end-column="81" />
+          <folding />
         </state>
       </provider>
     </entry>
