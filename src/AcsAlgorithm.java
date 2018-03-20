@@ -101,12 +101,13 @@ public class AcsAlgorithm implements ControlSTACS, ControlExperiment {
 
                 if ((raffled_prob < 0) || (raffled_prob >= n_candidates)) {  // ERRO NO SORTEIO
                     throw new Exception();
-                }
-                else {  // sorteio OK, procedimento normal
+                } else {  // sorteio OK, procedimento normal
                     choosed_node = candidate_list.value(raffled_prob);
                 }
 
             }catch (Exception e) {
+                //e.printStackTrace();
+
                 System.out.print("\r\n\r\n---->>>> ERRO NO SORTEIO\r\n");
                 System.out.print("vertice atual: " + current_node + "\r\n");
                 System.out.print("lista de candidatos: ");

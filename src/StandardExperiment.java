@@ -15,9 +15,9 @@ public class StandardExperiment implements ControlExperiment, ControlSTACS {
     	log = LogExperiment.getInstance();
         depot = DEPOT_INDEX;
        // this.log.f_log_stand_exper = new BufferedWriter(new FileWriter("outs/log_stand_experiment.txt"));
-       // this.log.f_log_stand_exper << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+
        // this.log.f_sols_aco = new BufferedWriter(new FileWriter("outs/plot_best_sols_aco.txt"));
-       // this.log.f_sols_aco << setiosflags (ios::fixed) << setprecision(FLOAT_PRECISION);
+
     }
 
     /**
